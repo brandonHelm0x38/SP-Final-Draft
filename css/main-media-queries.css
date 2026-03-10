@@ -1,0 +1,77 @@
+/* Responsive top dropdown; Add space when navbar dropdown is active so the Sign-Up button isn't tight against the bottom border */
+/* Responsive core nav styling */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-bottom: 1rem;
+    }
+    .internal-container {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    .categories-wrapper {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .category-item {
+        margin: 1rem;
+    }
+    #signup-nav-btn {
+        margin-bottom: 1rem;
+        margin-right: .5rem;
+    }
+    #logout-nav-btn {
+        margin-bottom: 1rem;
+        margin-right: .5rem;
+    }
+    .dropdown {
+        margin: 1rem;
+        text-align: center;
+    }
+    .custom-navbar-dropdown {
+        margin: 1rem;
+    }
+    /* Admin Pages - Your Projects Section */
+    .d-pad-1 {
+        margin-right: 1rem !important;
+    }
+    /* Admin Pages - Followed Projects Section */
+    .d-pad-2 {
+        background-color: var(--light-pane-bg-color) !important;
+        margin: .2rem 0 2rem 1rem !important;
+        width: calc(100% - 2rem) !important;
+    }
+    /* Admin Pages - Alerts Section */
+    .d-pad-3 {
+        background-color: var(--primary-pane-bg-color) !important;
+        width: calc(100% - 2rem) !important;
+    }
+    /* Admin Pages - Responsive Projects Table */
+    .projects-table {
+        width: 100%;
+    }
+}
+
+/* Responsive sidebar settings for large screens on Admin Pages */
+@media (min-width: 992px) {
+    .offcanvas-lg {
+        visibility: visible;
+        position: static;
+        height: 100%;
+        width: 250px;
+        transform: none;
+        border-right: 1px solid rgba(0,0,0,.1);
+    }
+    .offcanvas-lg .offcanvas-header .btn-close {
+        display: none; /* Hide close button on desktop */
+    }
+    /* Responsive table adjustments on Admin Pages */
+    .projects-table th {
+        padding: 0 !important;
+    }
+    .projects-table td {
+        text-align: left !important;
+    }
+    .projects-table thead th:nth-child(2) {
+        text-align: left !important;
+    }
+}

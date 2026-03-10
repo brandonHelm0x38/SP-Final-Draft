@@ -1,0 +1,1157 @@
+/* Ensure dropdown is hidden by default */
+.main-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    box-sizing: border-box;
+    background-color: var(--button-bg-color);
+    border: 1px solid var(--dark-border-color);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+:root {
+    --transition-bg-color1: #10303e;  /* Dark Blue */
+    --transition-bg-color2: #4b8b7b; /* Teal Blue-Green */
+    --main-outer-bg: rgb(14,64,66);           /* Main Outer Background; Slightly lighter/greener than Nav Backgrounds */
+
+    --accent2: rgb(50,103,101);         /* Scrollbar BackGround */
+    --accent3: rgb(16,48,62);           /* Dark Blue in KWT queryNav & FeaturePage Internal Header Background */
+
+    --light-border-color: rgb(241, 227, 164); /* rgb(241,227,164)  --> Light Tan */
+    --dark-border-color: #E7CD78;            /* #E7CD78;  --> Mid Gold */
+
+    --button-text-color: rgb(16,48,62);   /* DarkBlue matching Inner Header & Knowledge Web/Tree Background */
+    --button-bg-color: #FCFBFC;
+    --scroll-button-bg-color: #FCFBFC;
+    --button-triangle-color: #404040;     /* Dark Grey */
+    --hover-color: #DAA520;            /* #DAA520;  --> Deep/Dark Gold */
+    --dropdown-hover-bg: #D1F0EA;
+
+    --primary-pane-bg-color: antiquewhite;        
+    --light-pane-bg-color: #FCFBFC;          /* #FCFBFC  --> Frost (light-blue) */
+    --dark-pane-bg-color: rgb(16,48,62);           /* Dark Blue in KWT queryNav & FeaturePage Internal Header Background */
+
+    --header-text-color: #FCFBFC;
+    --primary-text-color: #404040;     /* Dark Grey */
+
+    --main-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--main-outer-bg);
+    font-family: var(--main-font-family);
+    overflow: hidden;
+}
+
+/* h1 - Strategic Pivot Quick Navigation Header */
+/* h3 - Selected Priority Quick-Nav Headers */
+
+h4 { /* Page/Solution Title; */
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+h5 { /* Page/Solution Quick-Description; */
+    font-family: var(--main-font-family);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+h6 { /* Body text; Follow US on Social Media Link Header;  */
+    font-family: var(--main-font-family);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.funding-link {
+    color: var(--transition-bg-color2);
+}
+
+.funding-link h6 {
+    font-family: var(--main-font-family);
+    font-weight: 900;
+    font-size: 1rem;
+    margin: 0;
+    color: var(--transition-bg-color2);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.funding-link:hover h6 {
+    transform: scale(1.12);
+}
+
+/* HEADER SECTION */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+.sp-header {
+    background-image: linear-gradient(0.25turn, var(--transition-bg-color1), var(--transition-bg-color2), var(--transition-bg-color1));
+    color: var(--header-text-color);
+    height: 12vh;
+    margin: .5vh .1vw 1vh .1vw;
+    padding: .2vh .2vw;
+    font-family: var(--main-font-family);
+    border: 3px solid var(--dark-border-color);
+    border-radius: 8px;
+    display: flex;
+}
+
+.logo-container img {
+    border-radius: 8px;
+    height: 100%;
+}
+
+.logo {
+    height: 8vh;
+    width: auto;
+}
+
+.chi-column {
+    width: 50%;
+}
+
+.chi-column h1, h3 {
+    position: relative;
+    left: 1rem;
+    top: -.5rem;
+    margin: 0;
+    text-decoration: underline;
+    text-decoration-color: var(--dark-border-color);
+}
+.chi-column h1 {
+    font-size: 2rem;
+}
+.chi-column h3 {
+    font-size: 1.2rem;
+}
+
+/* Only for debug */
+/* .chi-column table {
+    border: 3px solid var(--dark-border-color);
+} */
+
+/* NAV BUTTONS & DROPDOWNS */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.sp-nav-button {
+    background-color: var(--button-bg-color);
+    border: 2px solid var(--dark-border-color);
+    border-radius: 5px 5px 0px 0px;
+    color: var(--button-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
+}
+
+.sp-nav-button:hover, .sp-nav-button:focus {
+    background-color: var(--dropdown-hover-bg);
+    border: 2px solid var(--hover-color);
+    color: var(--hover-color);
+}
+
+/* MAIN NAVBAR BUTTON DROPDOWNS */
+.sp-nav-button-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.main-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    padding: 0 0.5rem 0 0.5rem;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    border: 2px solid var(--dark-border-color);
+    border-radius: 0px 8px 8px 8px;
+}
+
+.dropdown-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: var(--main-font-family);
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: var(--dark-border-color);
+    text-decoration-thickness: .2rem; 
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--main-font-family);
+}
+
+.main-dropdown-menu a {
+    width: 100%;
+    border: 2px solid var(--button-bg-color);
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--button-text-color);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    text-align: center;
+    margin: .2rem;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    box-sizing: border-box;
+}
+
+.sp-nav-button-dropdown.open .main-dropdown-menu {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 1.8vh;
+}
+
+.main-dropdown-menu a:hover {
+    background-color: var(--dropdown-hover-bg);
+    color: var(--hover-color);
+    border: 2px solid var(--hover-color);
+    border-radius: 5px;
+}
+
+/* SCROLLBAR STYLING */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+::-webkit-scrollbar {
+    width: 2.4vh;
+    height: 2.4vh;}
+    ::-webkit-scrollbar-track {
+        background: var(--accent2);
+        border-radius: .7vh;}
+    ::-webkit-scrollbar-thumb {
+        background: var(--light-border-color);
+        border-radius: .7vh;}
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--hover-color);}
+/* Buttons */
+::-webkit-scrollbar-button {
+    border-style: solid;
+    height: 2.1vh;
+    width: 2.1vh;}
+/* Up */
+::-webkit-scrollbar-button:vertical:decrement {
+    border-width: 0 1.1vh 2.2vh 1.1vh;
+    border-color: var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--button-triangle-color) var(--scroll-button-bg-color); }
+    ::-webkit-scrollbar-button:vertical:decrement:hover {
+        border-color: transparent transparent var(--hover-color); }
+/* Down */
+::-webkit-scrollbar-button:vertical:increment {
+    border-width: 2.2vh 1.1vh 0 1.1vh;
+    border-color: var(--button-triangle-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color); }
+        ::-webkit-scrollbar-button:vertical:increment:hover {
+            border-color: var(--hover-color) transparent transparent transparent; }
+/* Left */
+::-webkit-scrollbar-button:horizontal:decrement {
+    border-width: 1.1vh 2.2vh 1.1vh 0;
+    scroll-margin: 100px;
+    border-color: var(--scroll-button-bg-color) var(--button-triangle-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color); }
+        ::-webkit-scrollbar-button:horizontal:decrement:hover {
+            border-color: transparent var(--hover-color) transparent transparent; }
+/* Right */
+::-webkit-scrollbar-button:horizontal:increment {
+    border-width: 1.1vh 0 1.1vh 2.2vh;
+    border-color: var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--button-triangle-color); }
+        ::-webkit-scrollbar-button:horizontal:increment:hover {
+            border-color: transparent transparent transparent var(--hover-color); }
+
+/* FEATURE DEFAULT --> LEFT SECTION; ALWAYS VISIBLE BUT CHANGES SIZES --> SIDE-NAV OPEN VIEW / SMALLER */
+/* NOTE: Only the primary structure is defined here; The querried divs are the bottom section of code; SEE LINE 600 */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+/* DEV NOTE: Querried post styling is near the bottom of the code; SEE LINE: 700 (approx) */
+
+/* PAGE VIEWS AND COMMENT FILTER MODE NAV/SETTINGS */
+#feature-section-navs-opened {
+    overflow: hidden;
+    display: none;
+    width: 77vw;
+    height: 62vh;
+    border: 3px solid var(--dark-border-color);
+    border-radius: 8px; }
+    .feature-header { /* Shared in both views */
+        display: flex;
+        background-color: var(--dark-pane-bg-color);
+        width: 100%;
+        height: 4vh;
+        border-bottom: 2px solid var(--dark-border-color); }
+        .feature-filters-opened {
+            display: flex;
+            width: 18vw;
+            height: 4vh; }
+        .feature-alerts-pane-opened {
+            width: 58.4vw;
+            height: 3.6vh;
+            margin: .2vh .2vw;
+            background-color: var(--primary-pane-bg-color);
+            transform: skew(-20deg); }
+    /* MAIN SCROLL SECTION */
+    .feature-scroll-bg-opened {
+        background-image: linear-gradient(0turn, var(--transition-bg-color1), var(--transition-bg-color2), var(--transition-bg-color1));
+        overflow-y: auto;
+        width: 100%;
+        height: 57.8vh; }
+        /* TOP SOLUTION PROFILE IS SEPARATE FROM POSTS */
+        .page-feature-wrapper-opened {
+            width: 73.1vw;
+            margin: 0vh 1vw;
+            padding: .2vh .1vw;
+            border: 5px solid var(--light-border-color);
+            border-radius: 0px 0px 16px 16px; }
+            .page-feature-section-opened {
+                display: flex;
+                border: 3px solid var(--dark-border-color);
+                width: 72.8vw;
+                height: 30vh;
+                border-radius: 0px 0px 10px 10px; }
+                .pf-img-links-col { /* Shared in both views */
+                    width: 12vw;
+                    height: 30vh;
+                    border-right: 3px solid var(--dark-border-color); }
+                    .pf-company-img-pane { /* Shared in both views */
+                        background-color: var(--primary-pane-bg-color);
+                        width: 11.75vw;
+                        height: 22vh;
+                        margin: .2vh .1vw; }
+                        .pf-company-img { /* Shared in both views */
+                            width: 11.75vw;
+                            height: 22vh;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center; }
+                        /* IMAGE IN HTML SO IT CAN BE DYNAMICALLY CHANGED */
+                    .pf-social-links-border { /* Shared in both views */
+                        border-top: 3px solid var(--dark-border-color);
+                        margin-bottom: .2vh; }
+                    .pf-social-pane { /* Shared in both views */
+                        background-color: var(--primary-pane-bg-color);
+                        width: 11.75vw;
+                        height: 6.8vh;
+                        margin: 0vh .1vw .2vh .1vw;
+                        border-radius: 0px 0px 0px 5px; }
+                        .pf-social-links { /* Shared in both views */
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center; }
+                            .sm-icon-link { /* Shared in both views */
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                height: 4vh;
+                                width: 2vw; }
+                .pf-status-details-pane-opened {
+                    width: 60.7vw;
+                    height: 30vh; }
+                    .pf-name-details-pane-opened {
+                        background-color: var(--primary-pane-bg-color);
+                        margin: .2vh .1vw;
+                        width: 60.5vw;
+                        height: 6vh; }
+                        .pf-name-location-pane-opened {
+                            display: flex;
+                            background-color: transparent; /* DEV NOTE: - Div Sizing */
+                            width: 60.5vw;
+                            height: 3.3vh; } 
+                            .pf-col-name-opened {
+                                padding-left: 0.8rem;
+                                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                                width: 35vw;
+                                height: 3.3vh; } 
+                            .pf-col-location-opened {
+                                padding-right: 0.8rem;
+                                text-align: end;
+                                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                                width: 25.5vw;
+                                height: 3.3vh; }
+                    .pf-name-dtls-brdr-opened {
+                        width: 60.7vw;
+                        border-top: 3px solid var(--dark-border-color); }
+                    .pf-links-status-pane-opened  {
+                        display: flex;
+                        background-color: transparent; /* DEV NOTE: - Div Sizing */
+                        width: 60.7vw;
+                        height: 23.2vh; }
+                        .pf-collab-tools-pane { /* Shared in both views */
+                            background-color: var(--primary-pane-bg-color);
+                            margin: .2vh .1vw;
+                            width: 11.75vw;
+                            height: 22.8vh; }
+                            .pf-collab-links-pane { /* Shared in both views */
+                                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                                width: 11.75vw;
+                                height: 20.1vh; }
+                                .pf-collab-links-row { /* Shared in both views */
+                                    display: flex;
+                                    justify-content: space-around;
+                                    width: 11.75vw;
+                                    height: 6.7vh; }
+                                    .pf-collab-icon { /* Shared in both views */
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        margin: .6vh 0vw;
+                                        width: 2.5vw;
+                                        height: auto; }
+                        .pf-link-status-border { /* Shared in both views */
+                            border-right: 3px solid var(--dark-border-color);
+                            height: 23.2vh; }
+                        .pf-project-status-opened {
+                            background-color: var(--primary-pane-bg-color);
+                            border-radius: 0px 0px 5px 0px;
+                            margin: .2vh .1vw;
+                            width: 48.4vw;
+                            height: 22.8vh; }
+
+/* DEV NOTE: Querried post styling is near the bottom of the code; SEE LINE: 700 (approx) */
+
+.feature-scroll-section {
+    width: 100%; 
+    margin-bottom: 2vh; }
+
+/* FEATURE --> LEFT SECTION; ALWAYS VISIBLE BUT CHANGES SIZES --> SIDE-NAV DOCKED VIEW / LARGER */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+/* DEV NOTE: Querried post styling is near the bottom of the code; SEE LINE: 700 (approx) */
+
+#feature-section-navs-docked {
+    overflow: hidden;
+    width: 94.1vw;
+    height: 76vh;
+    border: 3px solid var(--dark-border-color);
+    border-radius: 8px; }
+    /* .feature-header */ /* Shared in both views */
+        .feature-filters-docked {
+            display: flex;
+            width: 18vw;
+            height: 4vh; }
+        .feature-alerts-pane-docked {
+            width: 75.4vw;
+            height: 3.6vh;
+            margin: .2vh .2vw;
+            background-color: var(--primary-pane-bg-color);
+            transform: skew(-20deg); }
+    .feature-scroll-bg-docked {
+        background-image: linear-gradient(0turn, var(--transition-bg-color1), var(--transition-bg-color2), var(--transition-bg-color1));
+        overflow-y: auto;
+        width: 100%;
+        height: 71.8vh; }
+        .page-feature-wrapper-docked {
+            width: 90.3vw;
+            margin: 0vh 1vw;
+            padding: .2vh .1vw;
+            border: 5px solid var(--light-border-color);
+            border-radius: 0px 0px 16px 16px; }
+            .page-feature-section-docked {
+                display: flex;
+                border: 3px solid var(--dark-border-color);
+                width: 90vw;
+                height: 30vh;
+                border-radius: 0px 0px 10px 10px; }
+                /* .pf-img-links-col */ /* Shared in both views */
+                    /* .pf-company-img-pane */ /* Shared in both views */
+                        /* .pf-company-img */ /* Shared in both views */
+                        /* IMAGE IN HTML SO IT CAN BE DYNAMICALLY CHANGED */
+                    /* .pf-social-links-border */ /* Shared in both views */
+                    /* .pf-social-pane */ /* Shared in both views */
+                        /* .pf-social-links */ /* Shared in both views */
+                            /* .sm-icon-link */ /* Shared in both views */
+                .pf-status-details-pane-docked {
+                    width: 77.9vw;
+                    height: 30vh; }
+                    .pf-name-details-pane-docked {
+                        background-color: var(--primary-pane-bg-color);
+                        margin: .2vh .1vw;
+                        width: 77.7vw;
+                        height: 6vh; }
+                        .pf-name-location-pane-docked {
+                            display: flex;
+                            background-color: transparent; /* DEV NOTE: - Div Sizing */
+                            width: 77.7vw;
+                            height: 3.3vh; } 
+                            .pf-col-name-docked {
+                                padding-left: .8rem;
+                                width: 50vw;
+                                height: 100%;
+                                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                            }
+                            .pf-col-location-docked {
+                                padding-right: 0.8rem;
+                                text-align: end;
+                                width: 27.7vw;
+                                height: 100%;
+                                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                            }
+                    .pf-name-dtls-brdr-docked {
+                        width: 77.9vw;
+                        border-top: 3px solid var(--dark-border-color); }
+                    .pf-links-status-pane-docked {
+                        display: flex;
+                        background-color: transparent; /* DEV NOTE: - Div Sizing */
+                        width: 77.9vw;
+                        height: 23.2vh; }
+                        /* .pf-collab-tools-pane */ /* Shared in both views */
+                            /* .pf-collab-links-pane */ /* Shared in both views */
+                                /* .pf-collab-links-row */ /* Shared in both views */
+                                    /* .pf-collab-icon */ /* Shared in both views */
+                        /* .pf-link-status-border */ /* Shared in both views */
+                        .pf-project-status-docked {
+                            background-color: var(--primary-pane-bg-color);
+                            border-radius: 0px 0px 5px 0px;
+                            margin: .2vh .1vw;
+                            width: 65.6vw;
+                            height: 22.8vh; }
+
+/* DEV NOTE: Querried post styling is near the bottom of the code; SEE LINE: 700 (approx) */
+
+/* FEATURE DEFAULT ASIDE --> RIGHT SECTION; HIDES WITH BOTTOM --> SIDE-NAV OPEN VIEW */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+#webGL-aside-opened {
+    display: none;
+    margin-left: .5vw;
+    width: 21vw;
+    height: 62vh;
+    border: 3px solid var(--dark-border-color);
+    border-radius: 8px; }
+    .user-profile-pane {
+        display: flex;
+        background-color: var(--accent3);
+        width: 21vw;
+        height: 13.3vh; }
+        .user-profile-pic {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 12px;
+            height: 11.3vh;
+            width: 4.5vw;
+            margin: 1vh .5vw; }
+        .user-metrics-alerts-pane {
+            background-color: var(--light-pane-bg-color);
+            font-family: var(--main-font-family);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--button-text-color);
+            border-radius: 12px;
+            width: 15vw;
+            height: 11.3vh;
+            margin: 1vh .5vw 1vh 0vw; }
+            .notifications-button {
+                margin-top: .5vh;
+                color: var(--button-text-color);
+                font-family: var(--main-font-family);
+                font-size: 1.2rem;
+                font-weight: bold;
+                border: 2px solid var(--transition-bg-color2);
+                border-radius: 8px;
+                background-color: rgb(235, 233, 233); }
+                .notifications-button:hover {
+                    background-color: var(--dropdown-hover-bg);
+                    border: 2px solid var(--hover-color);
+                    color: var(--hover-color); }
+
+
+/* FEATURE ASIDE --> RIGHT SECTION; HIDES WITH BOTTOM --> SIDE-NAV DOCKED VIEW */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+#webGL-aside-docked {
+    cursor: grab;
+    z-index: 100;
+    position: relative;
+    top: 3vh;
+    left: 2vw;
+    border-style: solid;
+    border-color: var(--dark-border-color);
+    border-width: .4vh .2vw .4vh .2vw;
+    border-radius: 100% -0% -0% 100%;
+    background-color: var(--accent3);
+    height: 70.3vh;
+    width: 3vw; }
+    #webGL-aside-docked:hover {
+        border-color: var(--hover-color); }
+    .DCKhlhtSqr { 
+        z-index: 104;
+        position: relative;
+        background-color: var(--accent3);
+        height: 3vh;
+        width: 1.5vw; }
+        .unpDCKcurveUPaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 0vh 100% 0vh;
+            border-right: .2vw solid var(--dark-border-color);
+            border-bottom: .4vh solid var(--dark-border-color);
+            background-color: var(--main-outer-bg);
+            height: 3vh;
+            width: 1.5vw; }
+        .unpDCKcurveDWNaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 100% 0vh 0vh;
+            border-right: .2vw solid var(--dark-border-color);
+            border-top: .4vh solid var(--dark-border-color);
+            background-color: var(--main-outer-bg);
+            height: 3vh;
+            width: 1.5vw; }
+    .unpDCKpicPane {
+        z-index: 101;
+        position: relative;
+        top: 24vh;
+        left: -1vw;
+        background-color: var(--accent3);
+        border-radius: 40% -0% -0% 40%;
+        height: 12vh;
+        width: 4vw; }
+        .DCKpicSweep {
+            z-index: 102;
+            position: relative;
+            left: -.3vw;
+            border-style: solid;
+            border-color: var(--dark-border-color) transparent var(--dark-border-color) var(--dark-border-color);
+            border-width: .4vh .2vw .4vh .2vw;
+            border-radius: 40% -0% -0% 40%;
+            background-color: var(--accent3);
+            width: 1vw;
+            height: 11.4vh; }
+            .unpDCKpic {
+                z-index: 103;
+                position: relative;
+                top: .9vh;
+                left: .4vw;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 1vh;
+                height: 9.4vh;
+                width: 3.4vw; }
+
+
+/* FEATURE DEFAULT FOOTER --> BOTTOM SECTION; HIDES WITH SIDE-NAV --> SIDE-NAV OPEN VIEW */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+#linked-content-nav-opened {
+    display: none;
+    margin-top: 1vh;
+    width: 99.7%;
+    height: 20vh;
+    border: 3px solid var(--dark-border-color);
+    border-radius: 8px; }
+    .lc-nav-left-scroll-bg {
+        background-image: linear-gradient(0.25turn, var(--transition-bg-color1), var(--transition-bg-color2), var(--transition-bg-color1));
+        width: 78.65%;
+        height: 100%;
+        border-right: 3px solid var(--dark-border-color); 
+        overflow-x: auto;
+        overflow-y: hidden; }
+        .linked-content-nav-pane { /* This is the scrollable pane that autosizes to content */
+            display: flex;
+            height: 100%; 
+            width: max-content; } 
+            .lc-item {
+                display: flex;
+                background-color: var(--light-pane-bg-color);
+                border-radius: 14px 8px;
+                margin: 1vh 1.5vw;
+                width: 685px;
+                height: 15.6vh; }
+                .lc-item-left-col {
+                    padding: 0vh .5vw;
+                    width: 9vw;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center; }
+                    .lc-item-source-banner { /* IMG CLASS */
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 8px 8px 0px 0px;
+                        border-left: 3px solid black;
+                        border-right: 3px solid black;
+                        border-top: 3px solid black;
+                        height: 4vh;
+                        width: 8vw; }
+                    .lc-item-source-image { /* IMG CLASS */
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 0px 0px 8px 8px;
+                        border-left: 3px solid black;
+                        border-right: 3px solid black;
+                        border-bottom: 3px solid black;
+                        height: 9vh;
+                        width: 8vw; }
+                .lc-item-internal-vert-divider {
+                    height: calc(100% - 2vh);
+                    margin: 1vh 0vw;
+                    background-color: var(--accent3);
+                    border-radius: 14px;
+                    width: .3vw; }
+                .lc-item-right-col { 
+                    width: 100%; }
+                    .lc-item-linked-quiz-icon { /* IMG CLASS */
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border: 3px solid black;
+                        border-radius: 8px;
+                        height: 5.3vh;
+                        width: 3.2vw;
+                        margin: .5vh .5vw; }
+            .lc-item-vert-div-wrapper {
+                border-radius: 18px 6px;
+                margin: 1vh 0vw;
+                border: 4px solid var(--light-border-color); }
+                .lc-item-vert-divider {
+                    border-radius: 18px 6px;
+                    height: calc(100% - 2vh - 10px);
+                    width: .2vw;
+                    background-color: var(--dark-border-color); }
+    .lc-nav-middle {
+        width: 18vw;
+        height: calc(100% - 2vh);
+        padding: 1vh .5vw;
+        background-color: var(--accent3);
+        border-right: 3px solid var(--dark-border-color); }
+        .lc-search-filter-pane {
+            height: 100%;
+            width: 100%;
+            border-radius: 14px;
+            background-color: var(--light-pane-bg-color); }
+            .apply-filters-button {
+                color: var(--button-text-color);
+                font-family: var(--main-font-family);
+                font-size: 1.2rem;
+                font-weight: bold;
+                border: 2px solid var(--transition-bg-color2);
+                border-radius: 8px;
+                background-color: rgb(235, 233, 233); }
+                .apply-filters-button:hover {
+                    background-color: var(--dropdown-hover-bg);
+                    border: 2px solid var(--hover-color);
+                    color: var(--hover-color);
+            }
+    .lc-nav-close-div {
+        height: 100%;
+        width: 3vw;
+        background-color: var(--accent3); }
+        #lc-nav-close-btn {
+            height: 18.5vh;
+            text-align: center;
+            border: 4px solid var(--light-border-color);
+            border-radius: 5px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            font-size: 2vh;
+            font-weight: bold;
+            margin: .3vh .4vw;
+            cursor: pointer; }
+            #lc-nav-close-btn:hover {
+                background-color: var(--dropdown-hover-bg);
+                color: var(--hover-color);
+                border: 4px solid var(--hover-color);
+            }
+
+
+/* FEATURE FOOTER --> BOTTOM SECTION; HIDES WITH SIDE-NAV --> SIDE-NAV DOCKED VIEW */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+#linked-content-nav-docked {
+    margin-top: 1.2vh;
+    position: relative;
+    top: 0vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 7.6vh;
+    width: 100vw; }
+    .footerPane_DCK { /* I think I want this one to be an ID not a class, and the one above a class not an ID */
+        cursor: grab;
+        display: flex;
+        position: relative;
+        top: 1.3vh;
+        left: 2.5vw;
+        border-style: solid;
+        border-color: var(--dark-border-color);
+        border-width: .4vh .4vw .4vh .4vw;
+        border-radius: 100% 100% 0 0;
+        background-color: var(--accent3);
+        height: 6vh;
+        width: 94.5vw; }
+        .footerPane_DCK:hover {
+            border-color: var(--hover-color); }
+        .ftrDCKcurveLFTaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 0vh 100% 0vh;
+            border-right: .2vw solid var(--dark-border-color);
+            border-bottom: .4vh solid var(--dark-border-color);
+            background-color: var(--main-outer-bg);
+            height: 3vh;
+            width: 1.5vw; }
+        .ftrDCKcurveRHTaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 0vh 0vh 100%;
+            border-left: .2vw solid var(--dark-border-color);
+            border-bottom: .4vh solid var(--dark-border-color);
+            background-color: var(--main-outer-bg);
+            height: 3vh;
+            width: 1.5vw; }
+        .ftrDCKpicPane {
+            z-index: 101;
+            position: relative;
+            top: -1.5vh;
+            left: 41.8vw;
+            background-color: var(--accent3);
+            border-radius: 25% 25% 0% 0%;
+            height: 7.2vh;
+            width: 7.1vw; }
+            .ftrPicSweep {
+                z-index: 102;
+                position: relative;
+                border-style: solid;
+                border-color: var(--dark-border-color) var(--dark-border-color) transparent var(--dark-border-color);
+                border-width: .4vh .2vw .4vh .2vw;
+                border-radius: 40% 40% 0% 0%;
+                background-color: var(--accent3);
+                width: 6.8vw;
+                height: 1vh; }
+                .ftrDCKpic {
+                    z-index: 103;
+                    position: relative;
+                    top: -1vh;
+                    left: .4vw;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 1vh;
+                    height: 6.8vh;
+                    width: 3.2vw; }
+
+/* FEATURE SECTION --> QUERY DIV'S; SIDE-NAV OPEN VIEW */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+
+/* This first style/structure section is shared between the 3 post types/style */
+.post-pane-opened {
+    border: 3px solid transparent; /* DEV NOTE: - Div Sizing */
+    border-radius: 14px;
+    margin: 2vh 0vw 0vh 1.3vw;
+    width: 72.9vw;
+    height: auto; }
+    .post-type-div { /* Shared in both views */
+        background-color: var(--primary-pane-bg-color);
+        border-radius: 14px 14px 0px 0px;
+        margin-left: 1vw;
+        width: 21vw;
+        height: 4vh; }
+        .post-content-opened {
+            background-color: var(--primary-pane-bg-color);
+            border-radius: 0px 14px 14px 14px;
+            margin-left: 1vw;
+            width: 71vw;
+            height: auto; }
+            /* TOP POST LINKS SECTION STYLES; Note in a general post, there may not be a set of links, it may just be a featured status/comment post. */
+            .post-type-top-pane { /* Shared in both views */
+                background-color: transparent; /* DEV NOTE: - Div Sizing; Main Test for posts. */
+                display: flex;
+                justify-content: space-around;
+                width: 100%; 
+                height: auto; }
+            /* COMMENT SECTION STYLES */
+            .post-comment-sect { /* Shared in both views */
+                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                width: 100%; 
+                height: auto; }
+                .post-comment-top-border { /* Shared in both views */
+                    margin: 1vh 1vw;
+                    background-color: var(--accent3);
+                    border-radius: 14px;
+                    width: calc(100% - 2vw);
+                    height: 1vh; }
+                .post-comment-row {
+                    background-color: transparent; /* DEV NOTE: - Div Sizing */
+                    display: flex;
+                    margin: 0 auto;
+                    width: 90%;
+                    height: auto; }
+                    .post-commenter-icon {
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 8px;
+                        border: 3px solid black;
+                        width: 6vw;
+                        height: 15vh;
+                        margin: 1.3vh 1vw;
+                        aspect-ratio: 1 / 1; }
+                    .post-comment-content { /* Shared in both views */
+                        height: auto; }
+                        .post-comment-button-pane {
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;}
+                            .like-button {
+                                cursor: pointer;
+                                border: 3px solid var(--button-text-color);
+                                border-radius: 5px;
+                                background-color: var(--button-bg-color);
+                                color: var(--button-text-color);
+                                font-size: 1rem;
+                                font-weight: bold;
+                                padding: .5vh 1vw;
+                                margin-top: 1vh; }
+                                .like-button:hover {
+                                    background-color: var(--dropdown-hover-bg);
+                                    color: var(--hover-color);
+                                    border: 3px solid var(--transition-bg-color2); }
+                            .likes-count {
+                                font-family: var(--main-font-family);
+                                font-size: 1rem;
+                                font-weight: bold;
+                                color: var(--transition-bg-color2);
+                                margin-left: 1vw; }
+                            .add-comment-button {
+                                cursor: pointer;
+                                border: 3px solid var(--button-text-color);
+                                border-radius: 5px;
+                                background-color: var(--button-bg-color);
+                                color: var(--button-text-color);
+                                font-size: 1rem;
+                                font-weight: bold;
+                                padding: .5vh 1vw;
+                                margin: 1vh 0vw 1.5vh 2vw; }
+                                .add-comment-button:hover {
+                                    background-color: var(--dropdown-hover-bg);
+                                    color: var(--hover-color);
+                                    border: 3px solid var(--transition-bg-color2); }
+                .post-comment-divider {
+                    margin: 1vh 6vw;
+                    background-color: var(--accent3);
+                    border-radius: 14px;
+                    width: calc(100% - 12vw);
+                    height: .5vh; }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* STYLE 1 : Linked-Learning-Content; Note 'lc' stands for Linked Content */
+.lc-source-content-col { /* Shared in both views */
+    background-color: transparent; /* DEV NOTE: - Div Sizing */
+    width: 46%;
+    height: auto; }
+    .post-type-flex-pane { /* Shared in both views; Shared in all post-types. */
+        background-color: transparent; /* DEV NOTE: - Div Sizing */
+        display: flex;
+        width: 100%;
+        height: auto; }
+        .lc-source-post-banner { /* IMG CLASS *//* Shared in both views */
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px 8px 0px 0px;
+            border: 3px solid black;
+            width: 90%;
+            height: 8vh; }
+        .lc-source-post-img { /* IMG CLASS *//* Shared in both views */
+            position: relative;
+            top: -.5vh;
+            background-size: cover;
+            background-position: center;
+            border-radius: 0px 0px 8px 8px;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            width: 90%;
+            height: 18vh; }
+.lc-vert-divider { /* Shared in both views */
+    margin-top: 8.2vh;
+    margin-bottom: 1vh;
+    background-color: var(--accent3);
+    border-radius: 14px;
+    width: .25vw;
+    height: 31vh; }
+.lc-linked-quiz-col { /* Shared in both views */
+    background-color: transparent; /* DEV NOTE: - Div Sizing */
+    width: 46%;
+    height: auto; }
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+        .lc-quiz-left-col-opened {
+            background-color: transparent; /* DEV NOTE: - Div Sizing */
+            width: 25.65vw;
+            height: auto; }
+            .lc-quiz-top-pane-opened {
+                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                display: flex;
+                width: 25.65vw;
+                height: auto; }
+                .lc-quiz-logo-pane { /* Shared in both views */
+                    background-color: transparent; /* DEV NOTE: - Div Sizing */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 7.5vw;
+                    height: 14vh; }
+                    .lc-quiz-network-icon { /* Shared in both views */
+                        border: 3px solid black;
+                        border-radius: 8px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        width: 5vw;
+                        height: auto; }
+                .lc-quiz-name-network-opened { /* DEV NOTE: - Div Sizing */
+                    background-color: transparent;
+                    width: 18.2vw;
+                    height: 14vh; }
+        .lc-quiz-right-col { /* Shared in both views */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent; /* DEV NOTE: - Div Sizing */
+            width: 7vw;
+            height: auto; }
+            .lc-subject-icon {
+                border: 3px solid black;
+                border-radius: 8px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 3.3vw;
+                height: auto; }
+
+
+/* STYLE 2 : Fundraising Links/Goals/Status; Note 'fg' stands for Fundraising Goals */
+.fggp-left-col { /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    background-color: transparent; /* DEV NOTE: - Div Sizing */
+    width: 48%;
+    height: auto; }
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+        .funding-campaign-icon {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 8px;
+            border: 3px solid black;
+            width: 6vw;
+            margin: 1.3vh 1vw;
+            aspect-ratio: 1 / 1; }
+        .progress-container {
+            border: 1px solid black;
+            margin-top: .6vh;
+            width: 10vw;
+            background-color: #f3f3f3; /* Background color of the empty bar */
+            border-radius: 10px;
+            overflow: hidden;
+            width: 10vw;
+            height: 1.5vh; /* Height of the bar */ }
+        .progress-bar {
+            width: 0%; /* Initial width */
+            height: 100%;
+            background-color: var(--dark-border-color); /* Color of the progress */
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.5s ease-in-out; /* Smooth transition for updates */ }
+        .progress-label {
+            font-weight: bold; }
+
+.fggp-right-col { /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    background-color: transparent; /* DEV NOTE: - Div Sizing */
+    width: 48%;
+    height: auto;
+}
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+
+/* STYLE 3 : General Post with basic links supported; Note 'gp' stands for General Post */
+/* .fggp-left-col */ /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+        .youtube-channel-banner { /* NOTE: You must change the div containing both the iframe and banner in the HTML document in order to center the set. It must reflect the total height/width of both elements + their borders. */
+            width: 560px;
+            height: 120px;
+            border-radius: 14px 14px 0px 0px;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-top: 3px solid black; }
+        .youtube-iframe {
+            position: relative;
+            top: -.5vh;
+            width: 560px;
+            height: 315px;
+            border-radius: 0px 0px 14px 14px;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black; }
+/* .fggp-right-col */ /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+
+
+/* FEATURE SECTION --> QUERY DIV'S; SIDE-NAV CLOSED VIEW */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ============================================================================================= */
+
+/* This first style/structure section is shared between the 3 post types/styles */
+.post-pane-docked {
+    border: 3px solid var(--dark); /* DEV NOTE: - Div Sizing */
+    border-radius: 14px;
+    margin: 2vh 0vw 0vh 1.3vw;
+    width: 90.1vw; }
+    /* .post-type-div */ /* Shared in both views */
+        .post-content-docked {
+            background-color: var(--primary-pane-bg-color);
+            border-radius: 0px 14px 14px 14px;
+            margin-left: 1vw;
+            width: 88.1vw;
+            height: auto; }
+
+
+/* STYLE 1 : Linked-Learning-Content; Note 'lc' stands for Linked Content */
+/* .lc-source-content-col */ /* Shared in both views */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+        /* .lc-source-post-banner */ /* IMG CLASS *//* Shared in both views */
+        /* .lc-source-post-img */ /* IMG CLASS *//* Shared in both views */
+/* .lc-vert-divider */ /* Shared in both views */
+/* .lc-linked-quiz-col */ /* Shared in both views */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+        .lc-quiz-left-col-docked {
+            background-color: transparent; /* DEV NOTE: - Div Sizing */
+            width: 33.55vw;
+            height: auto; }
+            .lc-quiz-top-pane-docked {
+                background-color: transparent; /* DEV NOTE: - Div Sizing */
+                display: flex;
+                width: 33.55vw;
+                height: auto; }
+                /* .lc-quiz-logo-pane */ /* Shared in both views */
+                    /* .lc-quiz-network-icon */ /* Shared in both views */
+                .lc-quiz-name-network-docked {
+                    background-color: transparent; /* DEV NOTE: - Div Sizing */
+                    width: 26.1vw;
+                    height: 14vh; }
+        /* .lc-quiz-right-col */ /* Shared in both views */
+            /* .lc-subject-icon */ /* Shared in both views */
+
+
+/* STYLE 2 : Fundraising Links/Goals/Status; Note 'fg' stands for Fundraising Goals */
+/* .fggp-left-col */ /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+/* .fggp-right-col */ /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+
+    
+/* STYLE 3 : General Post with basic links supported; Note 'gp' stands for General Post */
+/* .fggp-left-col */ /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */
+/* .fggp-right-col */ /* Shared in both views; Shared in both Style 2 (Fundraising Goals) and Style 3 (General Post) */
+    /* .post-type-flex-pane */ /* Shared in both views; Shared in all post-types. */

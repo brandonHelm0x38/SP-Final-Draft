@@ -1,0 +1,1235 @@
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/* THIS CODE IS FOR BOTH THE MAIN STRATEGIC PIVOT UI/UX, AS WELL AS THE PAGE MANAGEMENT PAGE FOR PAGE OWNERS */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+    /* background-color: #FBFCF8;  --> Pearl (off-white) */
+    /* background-color: #FEF9F3;  --> Alabaster (light-tan) */
+    /* background-color: #F8EEEC;  --> Salt (slightly-darker,light-tan) */
+    /* background-color: #F8F2ED;  --> Lace (similar to above) */
+    /* background-color: #FCFBFC;  --> Frost (light-blue) */
+:root {
+    --lghtBrdr: rgb(241, 227, 164); /* rgb(241,227,164)  --> Light Tan */
+    --darkBrdr: #E7CD78;            /* #E7CD78;  --> Mid Gold */
+
+    --bttnTextClr: rgb(16,48,62);   /* DarkBlue matching Inner Header & Knowledge Web/Tree Background */
+    --bttnBkGrnd: #FCFBFC;     /* Self */
+    /*--bttnBkGrnd: antiquewhite;*/     /* Self */
+    --ScrlBttnBkGrnd: antiquewhite;     /* Self */
+    --bttnTriangleClr: #404040;     /* Dark Grey */
+    --hoverClr: #DAA520;            /* #DAA520;  --> Deep/Dark Gold */
+
+    /*--ftPanesBkGrnd: mintcream;*/     /* #FCFBFC  --> Frost (light-blue) */
+    --ftPanesBkGrnd: antiquewhite;        
+    --usrPanesBkGrnd: #FCFBFC;          /* #FCFBFC  --> Frost (light-blue) */
+    /*--usrPanesBkGrnd: mintcream;*/    /*  */
+    --hScrlPanesBkGrnd: #FCFBFC;        /* #FCFBFC  --> Frost (light-blue) */
+
+    --accent1: rgb(14,64,66);           /* Main Outer Background; Slightly lighter/greener than Nav Backgrounds */
+    --accent2: rgb(50,103,101);         /* Scrollbar BackGround */
+    --accent3: rgb(16,48,62);           /* Dark Blue in KW queryNav & FeaturePage Internal Header Background */
+    --accent4: pink; }                  /* Unused */
+
+html {}
+
+body {
+    background-color: var(--accent1);
+    position: relative;
+    margin: 0px;}
+
+/*  TOP SECTION (1of3 VERTICAL SECTIONS)   -->   LEFT:: CHI PRIORITY & FOCUS YEAR   ;|   MIDDLE:: FEATURE-FLAGS   ;|   RIGHT:: BLOOMBERG   */
+/*  TOP SECTION (1of3 VERTICAL SECTIONS)   -->   LEFT:: CHI PRIORITY & FOCUS YEAR   ;|   MIDDLE:: FEATURE-FLAGS   ;|   RIGHT:: BLOOMBERG   */
+/*  TOP SECTION (1of3 VERTICAL SECTIONS)   -->   LEFT:: CHI PRIORITY & FOCUS YEAR   ;|   MIDDLE:: FEATURE-FLAGS   ;|   RIGHT:: BLOOMBERG   */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-(1of3 VERTICAL SECTIONS)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(1of3 VERTICAL SECTIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(1of3 VERTICAL SECTIONS)~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.header1 {
+    position: relative;
+    display: flex;
+    /* background-image: url("images/BGtextures/SP_BlankHeaderFade1880x100.png"); */
+    background: linear-gradient(0.25turn, #10303e, #4b8b7b, #10303e);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-color: var(--darkBrdr);
+    border-width: .4vh .2vw;
+    border-radius: 1.4vh;
+    padding: 1vh .5vw;
+    margin: 1.3vh .8vw;
+    height: 8.6vh;
+    width: 97.2vw; }
+    .spLogo_whiteBGwLetters {}
+    .SPcolumn {}
+        .SPnameDiv {
+            height: 3.8vh;
+            width: 30vw; }
+        .prioritySelectDiv {
+            display: flex;
+            height: 2.4vh;
+            width: 30vw; }
+        .yearSelectDiv {
+            display: flex;
+            height: 2.4vh;
+            width: 30vw; }
+    .featureColumn {
+        margin-left: 8vw;
+        display: flex; }
+        /* Depending on what is being featured, typically one Brand-Focus-Partner will be listed; Could be multiple listed, but that will be more rare */
+    .bloombergColumn {
+        position: absolute;
+        right: .5vw; }
+
+/* CENTRAL SECTION (2of3 VERTICAL SECTIONS) --> LEFT::FEATURE-PAGE & RIGHT::USER-SPECIFIC-NAVIGATION & RELATED KNOWLEDGE TREE STATS & BADGES /*/
+/* CENTRAL SECTION (2of3 VERTICAL SECTIONS) --> LEFT::FEATURE-PAGE & RIGHT::USER-SPECIFIC-NAVIGATION & RELATED KNOWLEDGE TREE STATS & BADGES /*/
+/* CENTRAL SECTION (2of3 VERTICAL SECTIONS) --> LEFT::FEATURE-PAGE & RIGHT::USER-SPECIFIC-NAVIGATION & RELATED KNOWLEDGE TREE STATS & BADGES /*/
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-(2of3 VERTICAL SECTIONS)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(2of3 VERTICAL SECTIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(2of3 VERTICAL SECTIONS)~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.centralSection {
+    position: relative;
+    background-color: transparent;
+    margin: 1.4vh .8vw;
+    height: 77vh;
+    width: 99.2vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex; }
+    /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+    /* GOTO-SECTION  --->  ALTERNATE PANE STYLES = {.featSectBG_Collapsed && .featSectBG_FULL}  ---------->>  GOTO LINE {~} */
+    /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+    .featureMAINpane {
+        background-color: transparent;
+        height: 77vh; }
+        .featureInternalHeader {
+            position: relative; 
+            background-color: var(--accent3);
+            border-top: .5vh solid var(--darkBrdr);
+            border-left: .2vw solid var(--darkBrdr);
+            border-right: .2vw solid var(--darkBrdr);
+            border-radius: 1.4vh 1.4vh 0vh 0vh;
+            height: 4.5vh; }
+            .featureBttnsPane {
+                display: flex;
+                height: 4vh;
+                width: 29.7vw;
+                border-bottom: .6vh solid var(--lghtBrdr); }
+                .linkAddContentBttn {
+                    position: relative;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    margin-left: .2vw;
+                    background-color: var(--bttnBkGrnd);
+                    border-width: .3vh .15vw;
+                    border-color: var(--darkBrdr);
+                    border-style: solid;
+                    border-radius: .6vh;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    color: rgb(16,48,62);
+                    padding: .2vh .4vw .1vh .4vw; }
+                .commentsFilterDropDown {
+                    position: relative;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    margin-left: .2vw;
+                    background-color: var(--bttnBkGrnd);
+                    border-width: .3vh .15vw;
+                    border-color: var(--darkBrdr);
+                    border-style: solid;
+                    border-radius: .6vh;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    color: rgb(16,48,62);
+                    padding: .2vh .4vw .1vh .4vw; }
+                .taxCreditPrgmFlag {
+                    position: relative;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    margin-left: .2vw;
+                    background-image: url("images/FlagThmb1.png");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    border-width: .3vh .15vw;
+                    border-color: var(--darkBrdr);
+                    border-style: solid;
+                    border-radius: .6vh;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+                    color: mintcream;
+                    padding: .2vh .4vw .1vh .4vw; }
+            .scrlTxtPnWrppr1 {
+                position: absolute;
+                z-index: 200;
+                top: -.5vh;
+                right: 1.6vw;
+                border-radius: .8vh .8vh 0vh 0vh;
+                border-top: .6vh solid var(--lghtBrdr);
+                border-left: .35vw solid var(--lghtBrdr);
+                border-right: .35vw solid var(--lghtBrdr);
+                transform: skew(-20deg); }
+                .scrlTxtPnWrppr2 {
+                    z-index: 200;
+                    border-left: .2vw solid var(--darkBrdr);
+                    border-right: .2vw solid var(--darkBrdr); }
+                    .scrollingTextPane {
+                        background-color: var(--ftPanesBkGrnd);
+                        border-left: 9.2vw solid var(--ftPanesBkGrnd);
+                        border-right: 9.2vw solid var(--ftPanesBkGrnd);
+                        height: 3.3vh;
+                        margin: .2vh .15vw .2vh .15vw;
+                        font-family: Helvetica;
+                        font-size: 2vh;
+                        color: var(--bttnTriangleClr);;
+                        padding: .8vh 1vw 0vh 1vw; }
+        .featSectBG_STD {
+            /* background-image: url("images/BGtextures/RectangularFade_LeftFEATUREpane.png"); */
+            background: linear-gradient(0.5turn, #10303e, #4b8b7b, #10303e);
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            border-style: solid;
+            border-color: var(--darkBrdr);
+            border-width: .4vh .4vw .4vh .2vw;
+            border-radius: 0px 0px 1.4vh 1.4vh; }
+            .VscrollPane_brdrWrap {  }
+                /* It SHOULD be possible to code these embedded div scroll panes to work in all 3 collapse/expand states, with any of the 3 above background panes being called/defined... the below code then fills the pane */
+                div.featurePageVscroll {
+                    padding: .0vh .7vw;
+                    height: 71.3vh;
+                    overflow-x: hidden;
+                    overflow-y: scroll; }
+                    /* Phantom scrollable pane for extending content beyond scrollable div bounds */
+                    .featureVscroll_phantom {
+                        /*height: 2800px;*/
+                        overflow-x: hidden;
+                        overflow-y: hidden; }
+                        /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+                        /* GOTO-SECTION   --->   FEATURE CONTENT POSTS & PROFILE DIVS   ---------->>   GOTO LINE {[~380]} */
+                        /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+        .cornerBttnPane {
+            position: relative;
+            z-index: 700;
+            display: block;
+            background-image: url("images/DamascusTexture.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(-14deg);
+            padding: .8vh .2vw;
+            width: 6vw;
+            height: 4vh;
+            border-radius: 50em;
+            border: .3vw double var(--darkBrdr); }
+            .cornerBttnPane:hover > .slideArrowCircleFrame {
+                background-color: transparent;}
+                .cornerBttnPane:hover > .slideArrowCircleFrame > .arrow {
+                    border-left: 1.2vw solid var(--hoverClr);
+                    animation: zoom-in-zoom-out .6s ease infinite; }
+                    @keyframes zoom-in-zoom-out {
+                        0% {
+                            transform: scale(1, 1); }
+                        50% {
+                            transform: scale(1.4, 1.4); }
+                        100% {
+                            transform: scale(1, 1); }}
+            .slideArrowCircleFrame {
+                position: relative;
+                padding: .7vh 0 .7vh .4vw;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                width: 1.6vw;
+                background-color: var(--ScrlBttnBkGrnd);
+                border-radius: 50em; }
+                .arrow {
+                    position: relative;
+                    border-top: 1vh solid transparent;
+                    border-bottom: 1vh solid transparent;
+                    border-left: 1.2vw solid var(--bttnTriangleClr);; }
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-(END MAIN STRUCTURE)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(END MAIN STRUCTURE)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(END MAIN STRUCTURE)~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-(BEGIN GOTO SECTION)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(BEGIN GOTO SECTION)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(BEGIN GOTO SECTION)~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+/* @@ GOTO-SECTION   --->   FEATURE CONTENT POSTS & PROFILE DIVS   ---------->>   FROM LINE {[~188]}   */
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+/*    GOTO-SECTION   --->   FEATURE PAGE CONTENT STRUCTURES (SAMPLES TO BE QUERY GENERATED IN FINAL VERSION); 
+                            COLLAPSIBLE UX PANEL STATE VERSIONS TO BE ADDED LATER AS WELL */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.Vscroll_profilePane {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    height: 30.3vh;
+    width: 90.1vw;  /* -72 == +18.1 */
+    margin-left: .05vw;
+    margin-bottom: .1vh;
+    border-radius: .0vh .0vh 1.8vh 1.8vh; }
+    .profilePane_leftClmn {
+        height: 30.3vh;
+        width: 11.3vw;
+        border-right: .2vw solid var(--darkBrdr); }
+        .profLogoPane {
+            height: 23.4vh;
+            width: 11.3vw;
+            border-bottom: .4vh solid var(--darkBrdr); }
+            .profLogo {
+                background-color: var(--ftPanesBkGrnd);
+                /*background-image: url("images/SPstatues/EvgeniyVuchetich3_Swords2ploughshares.jpg");*/
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 23.2vh;
+                width: 11vw;
+                margin: .2vh .1vw .2vh .2vw; }
+        .profileLinks {
+            background-color: var(--ftPanesBkGrnd);
+            padding-top: .5vh;
+            display: flex;
+            justify-content: space-around;
+            height: 5.5vh;
+            width: 11vw;
+            margin: .2vh .1vw .1vh .2vw;
+            border-radius: 0vh 0vh 0vh 1.4vh; }
+    .profilePane_rightClmn {
+        height: 30.4vh;
+        width: 78.7vw; } /* -60.6 == +18.1 */
+        .coSol_display { /* CompanyName :: SolutionName */
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--ftPanesBkGrnd);
+            height: 6vh;
+            width: 78.4vw; /* -60.35 == +18.1 */
+            margin: .2vh .2vw .2vh .1vw; }
+        .featuresANDintroPane {
+            display: flex;
+            height: 23.6vh;
+            width: 78.95vw;  /* -60.85 == +18.1 */
+            border-top: .4vh solid var(--darkBrdr); }
+            .intrnl_leftCol {
+                position: relative;
+                height: 23.7vh;
+                width: 14.2vw; 
+                border-right: .2vw solid var(--darkBrdr); }
+                .featrdContentBRDR {
+                    position: relative;
+                    height: 23.6vh;
+                    width: 14.2vw;
+                    border-bottom: .4vh solid var(--darkBrdr); }
+                    .featrdContentSECT {
+                        position: absolute;
+                        background-color: var(--ftPanesBkGrnd);
+                        height: 23.2vh;
+                        width: 14vw;
+                        margin: .2vh .1vw .2vh .1vw; }
+                        .featrdContentHDR {
+                            background-color: var(--ftPanesBkGrnd);
+                            height: 1vh;
+                            width: 14vw; }
+                        .featrdContentROW {
+                            padding-top: 1.4vh;
+                            display: flex;
+                            justify-content: space-evenly;
+                            background-color: var(--ftPanesBkGrnd);
+                            height: 5vh;
+                            width: 14vw; }
+                            .featrdContentPANE {
+                                background-color: transparent;
+                                overflow-x: hidden;
+                                overflow-y: hidden;
+                                border-radius: .8vh;
+                                height: 5vh;
+                                width: 2.8vw; }
+/*                .scrollingDrpBoxLnks {
+                    display: flex;
+                    background-color: var(--ftPanesBkGrnd);
+                    height: 6vh;
+                    width: 14vw;
+                    margin: .2vh .1vw .2vh .1vw; }
+                    .dropBox_HostLogo {
+                        position: relative;
+                        top: 0vh;
+                        left: -.3vw;
+                        padding-top: .4vh;
+                        padding-right: .2vw;
+                        background-color: var(--ftPanesBkGrnd);
+                        border-top: .2vh solid black;
+                        border-right: .1vw solid black;
+                        border-radius: 0vh 0vh 1.8vh 0vh;
+                        justify-content: space-around;
+                        margin: .2vh .1vw .1vh .2vw;
+                        border-radius: 0vh 0vh 0vh 1.4vh; }
+                    .dropBox_link {
+                        background-color: var(--ftPanesBkGrnd);
+                        padding-top: 5vh;
+                        justify-content: space-around;
+                        height: 5.5vh;
+                        margin: .2vh .1vw .1vh .2vw;
+                        border-radius: 0vh 0vh 0vh 1.4vh; }*/
+            .intrnl_rightCol { /* ONLY FOR TEXT in original pitch version, but this should be configurable to a number of modes based on business presentation needs */
+                background-color: var(--ftPanesBkGrnd);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1.4vh;
+                color: var(--bttnTriangleClr);
+                height: 23.2vh;
+                width: 64.05vw; /* -45.95 == +18.1 */
+                border-radius: 0vh 0vh 1.4vh 0vh;
+                margin: .2vh .2vw .2vh .1vw; }
+
+/*  Linked-Content (post/link) Feature Div - Original Design  *//* Hard-Coded Sample Content for Pitch  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* ::|::::--->  SHARED LEFT/RIGHT MAIN COLUMN STRUCTURES  <---::::|:: */ /* FROM LINE {~95} */
+.VscrlPn_lnkdCntnt {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    border-radius: 1.8vh 1.8vh 1.8vh 1.8vh;
+    height: 33.5vh;
+    width: 90.2vw; /* Primary Width Control */
+    margin-bottom: 1vh; }
+.VscrlPn_lnkdCntnt2 {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    border-radius: 1.8vh 1.8vh 1.8vh 1.8vh;
+    height: 40vh;
+    width: 90.2vw;
+    margin-bottom: 1vh; }
+.VscrlPn_lnkdCntnt3 {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    border-radius: 1.8vh 1.8vh 1.8vh 1.8vh;
+    height: 51vh;
+    width: 90.2vw;
+    margin-bottom: 1vh; }
+    .lnkdCntnt_leftClmn {
+        position: relative;
+        top: 1.5vh;
+        height: 30.5vh;
+        width: 25.7vw;
+        border-radius: 1.4vh 0vh 0vh 1.4vh;
+        border-right: .2vw solid var(--darkBrdr); }
+
+        /* ::|::::--->  VERSION 1  <---::::|:: */
+        .lnkdCntnt_linkFeatr {
+            position: relative;
+            top: -1.5vh;
+            border-radius: 1.4vh 0vh 0vh 0vh;
+            display: flex;
+            height: 23.6vh;
+            width: 25.7vw; 
+            border-bottom: .4vh solid transparent; }
+            .linkFeatr_innrLeft {
+                height:23vh;
+                width: 12.8vw; }
+                .linkFeatr_innrLeftTop {
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 1.4vh 0vh 0vh 0vh;
+                    margin: .2vh 0vw 0vh .2vw;
+                    padding: .2vh 0vw 0vh .1vw;
+                    height: 6.8vh;
+                    width: 12.7vw; }
+                    .innrRghtTop_ttlTxt {
+                        border-radius: 1vh .8vh 0vh 0vh;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        margin: .4vh .2vw 0vh .2vw;
+                        height: 6.4vh;
+                        width: 12.2vw; }
+                .linkFeatr_picPane {
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 0vh 0vh 0vh 1.4vh;
+                    margin: 0vh .2vw 0vh .2vw;
+                    padding: 0vh .3vw 0vh .3vw;
+                    height: 16.4vh;
+                    width: 12.2vw; }
+                    .linkFeatr_pic {
+                        border-left: .3vw solid black;
+                        border-right: .3vw solid black;
+                        border-bottom: .5vh solid black;
+                        border-radius: 0vh 0vh .8vh 1vh;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        height: 15.4vh;
+                        width: 11.7vw; }
+            .linkFeatr_spcrClmn { 
+                margin: .2vh 0vw 0vh 0vw;
+                height: 23.6vh;
+                width: .4vw; }
+                .spcrClmn_Top { 
+                    border-top: .7vh solid var(--ftPanesBkGrnd);
+                    border-bottom: .4vh solid var(--ftPanesBkGrnd);
+                    height: 6.1vh;
+                    width: .4vw; }
+                .spcrClmn_Mid { 
+                    border-top: .4vh solid var(--ftPanesBkGrnd);
+                    border-bottom: .4vh solid var(--ftPanesBkGrnd);
+                    height: 7.4vh;
+                    width: .4vw; }
+                .spcrClmn_Btm { 
+                    border-top: .4vh solid var(--ftPanesBkGrnd);
+                    border-bottom: .7vh solid var(--ftPanesBkGrnd);
+                    height: 7.3vh;
+                    width: .4vw; }
+            .linkFeatr_innrRght { 
+                height: 23.6vh;
+                width: 12.4vw; }
+                .innrRghtTop_TtlTxt { 
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 0vh 1.4vh 0vh 0vh;
+                    margin: .2vh 0vw 0vh 0vw;
+                    height: 7.1vh;
+                    width: 12.4vw; }
+                .innrRghtBtm_SmmryTxt {
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 0vh 0vh .8vh 0vh;
+                    margin: 0vh 0vw 0vh 0vw;
+                    height: 16.3vh;
+                    width: 12.4vw; }
+
+            .linkFeatr_KWQuery {
+                display: flex;
+                position: relative;
+                top: -1.5vh;
+                border-width: .6vh .3vw;
+                border-style: solid;
+                border-color: var(--ftPanesBkGrnd);
+                border-radius: 1.4vh .8vh 1.4vh 1.4vh;
+                background-color: transparent;
+                height: 8.1vh;
+                width: 24.85vw; 
+                margin: .2vh .1vw .2vh .2vw; }
+                .lnkFtKWqClmn1_NtwrkLogo { /* Learning Network Logo */
+                    border-radius: 1vh .8vh .8vh 1vh;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center; 
+                    background-color: var(--ftPanesBkGrnd);
+                    width: 4vw;
+                    height: 8.1vh; }
+                .lnkFtKWqClmn2 {
+                    width: 19vw;
+                    height: 8.1vh; }
+                    .lnkFtKWqClmn2top_NtwrkNm { /* Text Area For Learning Network Specifics */
+                        background-color: var(--ftPanesBkGrnd);
+                        width: 20.85vw;
+                        height: 2.2vh; }
+                    .lnkFtKWqClmn2btm_CntntDesc { /* Text Area For Learning Network Specifics */
+                        display: flex;
+                        width: 20.85vw; 
+                        height: 5.9vh; }
+                        .lnkFtKWqClmn2btm_TxtRow {
+                            margin-right: .25vw;
+                            background-color: var(--ftPanesBkGrnd);
+                            width: 11.25vw;
+                            height: 5.9vh; }
+                        .lnkFtKWqClmn2btm_SbjIcnGrp { /* Learning Network Name & Subject-Focus Icons */
+                            display:flex;
+                            justify-content: space-around;
+                            background-color: var(--ftPanesBkGrnd);
+                            width: 9.4vw;
+                            height: 5.9vh; }
+                            .lnkFtKWqClmn2btm_IcnPane {
+                                border-radius: 1.8vh;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                width: 2.8vw;
+                                height: 5.6vh; }
+
+/* ::|::::--->  SHARED LEFT/RIGHT MAIN COLUMN STRUCTURES  <---::::|:: */
+.lnkdCntnt_rghtClmn { /* Only for Hard-Coded Sample DIVs */
+    display: flex;
+    border-radius: 1.4vh 1.4vh 1.4vh 1.4vh;
+    background-color: var(--ftPanesBkGrnd);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vh;
+    color: var(--bttnTriangleClr);
+    height: 33.1vh;
+    width: 65.95vw;
+    margin: .2vh .1vw .2vh .1vw; }
+    .lnkdCntnt_cmmntStruct {
+        border-radius: 1.4vh 1.4vh 1.4vh 1.4vh;
+        background-color: var(--ftPanesBkGrnd);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vh;
+        color: var(--bttnTriangleClr);
+        height: 38.8vh;
+        width: 65.95vw;
+        padding: .4vh .2vw;
+        margin: .2vh .1vw .2vh .1vw; }
+    .lnkdCntnt_cmmntStruct2 {
+        border-radius: 1.4vh 1.4vh 1.4vh 1.4vh;
+        background-color: var(--ftPanesBkGrnd);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vh;
+        color: var(--bttnTriangleClr);
+        height: 49.8vh;
+        width: 65.95vw;
+        padding: .4vh .2vw;
+        margin: .2vh .1vw .2vh .1vw; }
+        .cmmntStruct_postSet {
+            display: flex;
+            width: 45.95vw;
+            height: 15vh; }
+            .cmmntStruct_clmn1 {
+                width: 5vw;
+                height: 15vh; }
+                .cmmntrProf {
+                    position: relative;
+                    height: 6vh;
+                    border-radius: 1.2vh 1.2vh 1.2vh 1.2vh;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center; }
+                .branchedLink {
+                    position: relative;
+                    top: -4.8vh;
+                    height: 3vh;
+                    width: 4.8vw;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 1.2vh 1.2vh 1.2vh 1.2vh;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center; }
+            .cmmntStruct_clmn2 {
+                border-radius: .8vh;
+                height: 13vh; 
+                width: 58vw; }
+            .cmmntStruct_clmn3 {
+                border-radius: .8vh;
+                height: 20vh; 
+                width: 58vw; }
+        .commentSpacer {
+            display: flex;
+            margin-top: 1.8vh;
+            margin-bottom: .4vh;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20em 40em 20em 40em;
+            background-color: var(--bttnTriangleClr);
+            width: 62vw;
+            height: .3vh; }
+        .branchNAVwrapper {
+            margin-top: .6vh;
+            margin-bottom: .4vh;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20em 40em 20em 40em;
+            border: .4vh solid var(--lghtBrdr); }
+            .branchNAVbanner {
+                display: flex;
+                overflow: hidden;
+                border-style: solid;
+                border-width: .4vh .2vw;
+                border-color: var(--darkBrdr);
+                border-radius: 20em 40em 20em 40em;
+                width: 63.1vw;
+                height: 6vh; }
+                .branchNAV_networkLogo {
+                    position: relative;
+                    /*padding-left: .4vw;*/
+                    width: 3.2vw;
+                    height: 6vh;
+                    /*border-radius: 1.2vh;*/
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center; }
+                .branchNAV_kwtDesc {
+                    height: 6vh;
+                    width: 32vw;
+                    border-right: .2vw solid var(--darkBrdr); }
+                    .branchNAV_kwtDesc_top {
+                        position: relative;
+                        text-decoration: underline;
+                        font-weight: 900;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: bolder;
+                        height: 1.4vh;
+                        width: 32vw;}
+                    .branchNAV_kwtDesc_mid {
+                        background-color: var(--darkBrdr);
+                        height: .4vh;
+                        width: 32vw; }
+                    .branchNAV_kwtDesc_btm {
+                        height: 2.8vh;
+                        width: 32vw; }
+                .branchNAV_addCmnt {
+                    height: 6vh;
+                    width: 9vw; }
+                .branchNAV_SclMda {
+                    height: 6vh;
+                    width: 10.4vw; }
+                    .branchNAV_SclMda_top {
+                        height: 2.8vh;
+                        width: 10.4vw;}
+                        .SclMda_NtwrkLogo {
+                            position: relative;
+                            left: 2.8vw;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            height: 2.8vh;
+                            width: 5vw; }
+                    .branchNAV_SclMda_mid {
+                        background-color: var(--darkBrdr);
+                        height: .4vh;
+                        width: 10.4vw; }
+                    .branchNAV_SclMda_btm {
+                        text-align: center;
+                        height: 2.8vh;
+                        width: 10.4vw; }
+                .branchNAV_openBranch {
+                    height: 6vh;
+                    width: 9vw; }
+
+            .branchSpacer {
+                display: flex;
+                margin-top: 1.8vh;
+                margin-bottom: .4vh;
+                margin-left: auto;
+                margin-right: auto;
+                border-top: .3vh solid var(--lghtBrdr);
+                border-bottom: .3vh solid var(--lghtBrdr);
+                border-radius: 20em 40em 20em 40em;
+                background-color: var(--darkBrdr);
+                width: 62vw;
+                height: .3vh; }
+            .branchUX_whiteOval {
+                background-color: antiquewhite;
+                height: 4vh;
+                width: 7vw; }
+            .cmmntBttns {
+                position: relative;
+                top: -2.5vh;
+                width: 6vw;
+                height: 2vh;
+                padding-right: 1vw;
+                text-align: center;
+                color: var(--bttnTextClr);
+                background-color: var(--bttnBkGrnd);
+                background-color: var(--bttnBkGrnd);
+                border-width: .3vh .15vw;
+                border-color: var(--darkBrdr);
+                border-style: solid;
+                border-radius: .6vh;
+                font-family: Helvetica;
+                font-weight: bold;
+                font-size: 2vh;
+                color: rgb(16,48,62);
+                padding: .2vh .4vw .1vh .4vw; }
+            #cmmntBttns {
+                position: relative;
+                cursor: pointer;
+                top: -2.5vh;
+                width: 7vw;
+                height: 4.8vh;
+                padding-right: 1vw;
+                text-align: center;
+                color: var(--bttnTextClr);
+                background-color: var(--bttnBkGrnd);
+                background-color: var(--bttnBkGrnd);
+                border-width: .3vh .15vw;
+                border-color: var(--darkBrdr);
+                border-style: solid;
+                border-radius: .6vh;
+                font-family: Helvetica;
+                font-weight: bold;
+                font-size: 2vh;
+                color: rgb(16,48,62);
+                padding: .2vh .4vw .1vh .4vw; }
+                
+
+/*    */ /* Hard-Coded Sample Content for Pitch  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* ::|::::--->    <---::::|:: */
+/* Hard-Coded Sample Content for Pitch  */
+/*.VscrollPane_pstLnkSNGL {}
+    .pstLnkSNGL_leftClmn {}
+        .pstLnkSNGL_linkFeatr {}
+            .pstLnkSNGL_logoPane {}
+            .pstLnkSNGL_textBox {}
+    .pstLnkSNGL_rghtClmn {}*/
+
+/*    */ /* Hard-Coded Sample Content for Pitch  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* ::|::::--->    <---::::|:: */
+.VscrollPane_fundraising {
+    border: .2vh solid yellow;
+    margin-bottom: 1vh; }
+
+
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* @@ GOTO-SECTION    --->   UserProfNav Docked Mock-up   ---------->>   FROM LINE {[~201]}  */
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.userNavPane_DCK {
+    z-index: 100;
+    position: relative;
+    top: 3vh;
+    left: 2vw;
+    border-style: solid;
+    border-color: var(--darkBrdr);
+    border-width: .4vh .2vw .4vh .2vw;
+    border-radius: 100% -0% -0% 100%;
+    background-color: var(--accent3);
+    height: 70.3vh;
+    width: 3vw; }
+    .DCKhlhtSqr {
+        z-index: 104;
+        position: relative;
+        background-color: var(--accent3);
+        height: 3vh;
+        width: 1.5vw; }
+        .unpDCKcurveUPaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 0vh 100% 0vh;
+            border-right: .2vw solid var(--darkBrdr);
+            border-bottom: .4vh solid var(--darkBrdr);
+            background-color: var(--accent1);
+            height: 3vh;
+            width: 1.5vw; }
+        .unpDCKcurveDWNaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 100% 0vh 0vh;
+            border-right: .2vw solid var(--darkBrdr);
+            border-top: .4vh solid var(--darkBrdr);
+            background-color: var(--accent1);
+            height: 3vh;
+            width: 1.5vw; }
+    .unpDCKpicPane {
+        z-index: 101;
+        position: relative;
+        top: 24vh;
+        left: -1vw;
+        background-color: var(--accent3);
+        border-radius: 40% -0% -0% 40%;
+        height: 12vh;
+        width: 4vw; }
+        .DCKpicSweep {
+            z-index: 102;
+            position: relative;
+            left: -.3vw;
+            border-style: solid;
+            border-color: var(--darkBrdr) transparent var(--darkBrdr) var(--darkBrdr);
+            border-width: .4vh .2vw .4vh .2vw;
+            border-radius: 40% -0% -0% 40%;
+            background-color: var(--accent3);
+            width: 1vw;
+            height: 11.4vh; }
+            .unpDCKpic {
+                z-index: 103;
+                position: relative;
+                top: .9vh;
+                left: .4vw;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 1vh;
+                height: 9.4vh;
+                width: 3.4vw; }
+
+.footerDCK {
+    position: relative;
+    top: 0vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 7.6vh;
+    width: 100vw; }
+    .footerPane_DCK {
+        display: flex;
+        position: relative;
+        top: 1.3vh;
+        left: 2.5vw;
+        border-style: solid;
+        border-color: var(--darkBrdr);
+        border-width: .4vh .4vw .4vh .4vw;
+        border-radius: 100% 100% 0 0;
+        background-color: var(--accent3);
+        height: 6vh;
+        width: 94.5vw; }
+        .ftrDCKcurveLFTaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 0vh 100% 0vh;
+            border-right: .2vw solid var(--darkBrdr);
+            border-bottom: .4vh solid var(--darkBrdr);
+            background-color: var(--accent1);
+            height: 3vh;
+            width: 1.5vw; }
+        .ftrDCKcurveRHTaway {
+            z-index: 105;
+            position: relative;
+            border-radius: 0vh 0vh 0vh 100%;
+            border-left: .2vw solid var(--darkBrdr);
+            border-bottom: .4vh solid var(--darkBrdr);
+            background-color: var(--accent1);
+            height: 3vh;
+            width: 1.5vw; }
+        .ftrDCKpicPane {
+            z-index: 101;
+            position: relative;
+            top: -1.5vh;
+            left: 41.8vw;
+            background-color: var(--accent3);
+            border-radius: 25% 25% 0% 0%;
+            height: 7.2vh;
+            width: 7.1vw; }
+            .ftrPicSweep {
+                z-index: 102;
+                position: relative;
+                border-style: solid;
+                border-color: var(--darkBrdr) var(--darkBrdr) transparent var(--darkBrdr);
+                border-width: .4vh .2vw .4vh .2vw;
+                border-radius: 40% 40% 0% 0%;
+                background-color: var(--accent3);
+                width: 6.8vw;
+                height: 1vh; }
+                .ftrDCKpic {
+                    z-index: 103;
+                    position: relative;
+                    top: -1vh;
+                    left: .4vw;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 1vh;
+                    height: 6.8vh;
+                    width: 3.2vw; }
+
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* @@ GOTO-SECTION    --->   Hscroll K-W-T-query (Knowledge Web/Tree) Search Result Pane-SET Variants   ---------->>   FROM LINE {[~308]}  */
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/*  Variant(1) ---> ;   */ /*  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/*.Hscroll_KWFPlftClmn {
+    background-color: transparent;
+    width: 9.2vw;
+    height: 16.4vh; }
+    .Hscroll_KWTtlTxtPane {
+        background-color: var(--hScrlPanesBkGrnd);
+        border-radius: 1.4vh 0vh 0vh 0vh;
+        border-bottom: var(--hScrlPanesBkGrnd) solid .2vh;
+        padding-top: .2vh;
+        width: 9vw;
+        height: 4.6vh; }
+        .KWTtlTxtPane_txtLogo {
+            position: relative;
+            left: .2vh;
+            border-radius: 1.4vh .8vh 0vh 0vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            width: 8.8vw;
+            height: 4.7vh; }
+    .Hscroll_KWPicPane {
+        background-color: var(--hScrlPanesBkGrnd);
+        padding: .0vh .1vw .2vh .1vw;
+        width: 8.8vw;
+        height: 11.2vh;
+        border-radius: 0vh 0vh 1.4vh .8vh; }
+        .Hscroll_KWPic {
+            width: 8.8vw;
+            height: 11.2vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            border-radius: 0vh 0vh 1.4vh .8vh; }
+.Hscroll_KWFPrhtClmn {
+    margin: 0vh;
+    width: 19vw;
+    height: 16.4vh; }
+    .KWFPrhtClmn_topRw {
+        display: flex;
+        width: 18.6vw;
+        height: 9.1vh; }
+        .KWFPrhtClmn_TpRwSpcr {
+            height: 8vh;
+            width: .2vw;
+            border-top: .6vh solid var(--hScrlPanesBkGrnd);
+            border-bottom: .6vh solid var(--hScrlPanesBkGrnd);
+            background-color: transparent; }
+        .KWFPrhtClmn_TpRwTxtGrp {
+            height: 9.1vh;
+            width: 18.4vw;
+            background-color: var(--hScrlPanesBkGrnd); 
+            border-radius: 0vh .8vh 1.4vh 0vh; }
+    .KWFPrhtClmn_btmRw {
+        margin-top: .4vh;
+        margin-left: .2vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        border-radius: 0vh 1.4vh 1.4vh 1.4vh;
+        border: .2vw solid var(--hScrlPanesBkGrnd);
+        background-color: transparent;
+        display: flex;
+        width: 18.1vw;
+        height: 6.1vh; }
+        .btmRwClmn1_NtwrkLogo {*/ /* Learning Network Logo */
+            /*background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 2.8vw;
+            height: 6.1vh; }
+        .btmRwClmn2_CntntDesc {
+            width: 15.3vw;
+            height: 6vh; }
+            .btmRwC2top_NtwrkNm {*/ /* Learning Network Name */
+                /*background-color: var(--hScrlPanesBkGrnd);
+                width: 15.3vw;
+                height: 2vh; }
+            .btmRwClmn2btm {
+                display: flex;
+                width: 15.3vw;
+                height: 4.3vh; }
+                .btmRwC2btmL_TxtRow {*/ /* Text Description / Linked Content Tags */
+                    /*margin-right: .2vw;
+                    background-color: var(--hScrlPanesBkGrnd);
+                    width: 8.7vw;
+                    height: 4.3vh; }
+                .btmRwC2btmR_subjectIcnGrp {*/ /* Subject-Focus Icons */
+                    /*justify-content: space-around;
+                    display: flex;
+                    background-color: var(--hScrlPanesBkGrnd);
+                    width: 6.4vw;
+                    height: 4.3vh; }
+                    .btmRwC2btmR_IcnPane {
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 2.1vw;
+                        height: 4.3vh; }*/
+
+
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+/* @@ GOTO-SECTION  --->  ALTERNATE PANE STYLES = {.userNavPane_Collpased && .userNavPane_FULL}  ---------->>  FROM LINE {[~???]} */
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+
+
+/*    CORE UX CUSTOMIZATION SECTION    -->    SCROLLBARS; DROPDOWNS;
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-(UX CUSTOMIZATION)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(UX CUSTOMIZATION)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(UX CUSTOMIZATION)~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/*  ALL SCROLL-BAR AND BUTTON SETTINGS  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+::-webkit-scrollbar {
+    width: 2.4vh;
+    height: 2.4vh;}
+    ::-webkit-scrollbar-track {
+        background: var(--accent2);
+        border-radius: .7vh;}
+    ::-webkit-scrollbar-thumb {
+        background: var(--lghtBrdr);
+        border-radius: .7vh;}
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--hoverClr);}
+/* Buttons */
+::-webkit-scrollbar-button {
+    border-style: solid;
+    height: 2.1vh;
+    width: 2.1vh;}
+    /* Up */
+    ::-webkit-scrollbar-button:vertical:decrement {
+        border-width: 0 1.1vh 2.2vh 1.1vh;
+        border-color: var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--bttnTriangleClr) var(--ScrlBttnBkGrnd); }
+        ::-webkit-scrollbar-button:vertical:decrement:hover {
+            border-color: transparent transparent var(--hoverClr);
+            animation: zoom-in-zoom-out .6s ease infinite; }
+/*            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }*/
+    /* Down */
+::-webkit-scrollbar-button:vertical:increment {
+    border-width: 2.2vh 1.1vh 0 1.1vh;
+    border-color: var(--bttnTriangleClr) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd); }
+        ::-webkit-scrollbar-button:vertical:increment:hover {
+            border-color: var(--hoverClr) transparent transparent transparent;
+            animation: zoom-in-zoom-out .6s ease infinite; }
+/*            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }*/
+    /* Left */
+::-webkit-scrollbar-button:horizontal:decrement {
+    border-width: 1.1vh 2.2vh 1.1vh 0;
+    scroll-margin: 100px;
+    border-color: var(--ScrlBttnBkGrnd) var(--bttnTriangleClr) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd); }
+        ::-webkit-scrollbar-button:horizontal:decrement:hover {
+            border-color: transparent var(--hoverClr) transparent transparent;
+            animation: zoom-in-zoom-out .6s ease infinite; }
+/*            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }*/
+    /* Right */
+::-webkit-scrollbar-button:horizontal:increment {
+    border-width: 1.1vh 0 1.1vh 2.2vh;
+    border-color: var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--bttnTriangleClr); }
+        ::-webkit-scrollbar-button:horizontal:increment:hover {
+            border-color: transparent transparent transparent var(--hoverClr);
+            animation: zoom-in-zoom-out .6s ease infinite; }
+/*            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }*/
+
+/*  ALL DROP-DOWN MENU AND BUTTON SETTINGS  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.DrpdwnDiv {
+    padding: 0vh;
+    color: var(--bttnTextClr);
+    pointer-events: inherit;
+    z-index: 699;
+    display: block;
+    border-radius: 0vh .6vh .6vh 0vh;
+    border: .15vw solid var(--darkBrdr); }
+    .KWDrpdwnLnk {
+        background-color: var(--bttnBkGrnd);
+        padding: .1vh .4vw .0vh 2.8vw;
+        border-radius: 0vh .4vh .4vh 0vh;
+        border-color: var(--bttnBkGrnd);
+        border-style: solid;
+        text-decoration: none;
+        color: var(--bttnTextClr);
+        font-family: Helvetica;
+        font-size: 2vh;
+        font-weight: bold;
+        cursor: pointer;  }
+        /* This code chunk determines color of selected menu */
+        /*.dropdown > .link:focus,*/ /*-->  This version is for non-JS implementations & testing situations  */
+        .DrpdwnDiv.active > .KWDrpdwnLnk,
+        .KWDrpdwnLnk:hover {
+            color: var(--hoverClr); }
+        .DrpdwnDiv.active > .link,
+        .link:hover {
+            color: var(--hoverClr); }
+
+.dropdown {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    gap: 0; }
+    .dropDownLink {
+        background: none;
+        border: none;
+        text-decoration: none;
+        color: mintcream;
+        font-family: Helvetica;
+        font-size: 2vh;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0;
+        padding: 0; }
+        /* This code chunk determines color of selected menu */
+        /*.dropdown > .link:focus,*/ /*-->  This version is for non-JS implementations & testing situations  */
+        .dropdown.active > .dropDownLink,
+        .dropDownLink:hover {
+            color: var(--hoverClr); }
+
+    /* Set DropDown properties --> Animation Set 1of2 --> This is the active state, when the drop-Down is visible. */
+    .dropdown-menu {
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        top: calc(100% + .1vh);
+        background-color: white;
+        padding: 1.2vh 1vw;
+        border-radius: 1.4vh;
+        box-shadow: 0 1vh 1vw 0 rgba(0,0,0,.1);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8vh);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; }
+        .information-grid {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            gap: 1.8vh; }
+            .dropdown-heading {
+                font-size: 2vh;
+                font-family: Helvetica;
+                gap: .8vh;
+                text-decoration: underline;
+                text-decoration-color: var(--darkBrdr);
+                text-decoration-thickness: .2vh; }
+            .dropdown-links {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.8vh;
+                gap: .1vh; }
+                .link {
+                    background: none;
+                    border: none;
+                    text-decoration: none;
+                    color: #777;
+                    font-family: inherit;
+                    font-size: inherit;
+                    cursor: pointer;
+                    padding: 0; }
+            /* This code chunk determines color of selected menu */
+            /*.dropdown > .link:focus,*/ /*-->  This version is for non-JS implementations & testing situations  */
+            .dropdown.active > .link,
+            .link:hover {
+                color: var(--hoverClr); }
+
+/* This drives the animation from it's prior state... which should be set to invisible, with no pointer-events. */
+/*.dropdown > .link:focus + .dropdown-menu {*/ /*-->  This version is for non-JS implementations & testing situations */
+.dropdown.active > .dropDownLink + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; }
+    .dropdown.active > .link + .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; }
+.DrpdwnDiv.active > .KWDrpdwnLnk + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; }
+    .DrpdwnDiv.active > .link + .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; }
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-(CORE TEXT DEFINITIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~(CORE TEXT DEFINITIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(CORE TEXT DEFINITIONS)~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+h1 { /* (LEFT) Company Name; Concept | (RIGHT) City, St */
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bttnTriangleClr) }
+
+#font1 { /* Feature Business/Concept Page; comments & post text */
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: var(--bttnTriangleClr) }
+
+h2 { /* User Profile Name Text */
+    position: relative;
+    left: .3vw;
+    top: .3vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--accent3); }
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/*   UNUSED DEV CODE [ALTERNATE STYLES/SAMPLES   */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */

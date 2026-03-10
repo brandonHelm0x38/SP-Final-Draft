@@ -1,0 +1,351 @@
+<!-- 
+session_start();
+include("connect.php");
+
+if(isset($_SESSION['email'])) {
+  $email=$_SESSION['email'];
+  $query=mysqli_query($conn, "SELECT * FROM logintutorial.users2 WHERE email='$email'");
+  //echo "DEBUG:home:query(num_rows):".$query->num_rows." END\r\n";
+  if($query->num_rows > 0) {
+    $row = mysqli_fetch_row($query);
+    $id=$row[0];
+    $firstName=$row[1];
+    $roleTitle=$row[2];
+    $company=$row[3];
+    //echo $row[0].'|'.$row[1].'|'.$row[2].'|'.$row[3].'|'.$row[4];
+      //$timezone = date_default_timezone_get();  //By default phpMyAdmin seems to default to Berlin time...
+      //echo "The current server timezone is: ".$timezone;  //By default phpMyAdmin seems to default to Berlin time...
+    date_default_timezone_set('America/North_Dakota/Center');  //This is central time.
+    $date = date('Y/m/d H:i:s');
+    //echo $date;
+  }
+  else {
+    echo "DEBUG:homepage: EMPTY QUERY ERROR!!!";
+  }
+}
+else {
+  echo "DEBUG:homepage:(isset)=FALSE";
+}
+
+ -->
+<!-- ======================================================================================================================================== -->
+<!-- ======================================================================================================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/phoneStyle.css">
+  <script defer src="style/featurepage.js"></script>
+  <title>Home</title>
+</head>
+<body>
+<!-- ======================================================================================================================================== -->
+<!-- ======================================================================================================================================== -->
+ 
+<!-- NAVIGATION BAR -->
+  <div class="container">
+    <!-- Navigation Bar -->
+    <div class="siteNav">
+      <div class="spLogo_whiteBGwLetters">
+          <a href="dsktp/dsktpDCKD_overview.html">
+              <img src="images/SPlogos/thmb/90h_SPlogo_whiteBG_clrAdjPop_92w.png" style="background-repeat: no-repeat; width: auto; height: 100%; background-size: contain; border-radius: .8vh;"
+              alt="Strategic Pivot";>
+          </a>
+      </div>
+
+      <div class="spColumn">
+        <div class="spNameDiv">
+          <h1>Strategic Pivot</h1>
+        </div>
+        <div class="spNavPane">
+          <div class="spNavCol_left">
+            <h2 style="margin-top: .2vh;">Focus Year |</h2>
+            <h2 style="margin-top: 1vh;">Priority |</h2>
+          </div>
+          <div class="spNavCol_right">
+            <div class="dropdown" data-dropdown>
+              <button class="dropDownLink" data-dropdown-button>2024</button>
+              <div class="dropdown-menu information-grid">
+                <div>
+                  <div class="dropdown-heading">Focus Year</div>
+                  <div class="dropdown-links">
+                    <a href="#" class="link">Archive</a>
+                    <a href="#" class="link">2020</a>
+                    <a href="#" class="link">2021</a>
+                    <a href="#" class="link">2022</a>
+                    <a href="#" class="link">2023</a>
+                    <a href="#" class="link">2024</a>
+                    <a href="#" class="link">Open Pitches/Bids</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown" data-dropdown>
+            <button class="dropDownLink" data-dropdown-button>Project Management<br>& Engagement Platform</button>
+            <div class="dropdown-menu information-grid">
+              <div>
+                <div class="dropdown-heading">Political Priorities</div>
+                <div class="dropdown-links">
+                  <a href="#" class="link">Project Mgmt & Engagement Platform</a>
+                  <a href="#" class="link">Cyber Force</a>
+                  <br>
+                </div>
+                <div class="dropdown-heading">Presidential Priorities</div>
+                <div class="dropdown-links">
+                  <a href="#" class="link">Advanced Psychology Grid</a>
+                  <a href="#" class="link">Interactive Tax Program</a>
+                  <br>
+                </div>
+                <div class="dropdown-heading">Industrial Priorities</div>
+                <div class="dropdown-links">
+                  <a href="#" class="link">Identity Products</a>
+                  <a href="#" class="link">Helm Architecture</a>
+                  <a href="#" class="link">UPC & Accounting Automation</a>
+                  <br>
+                </div>
+                <div class="dropdown-heading">CVO Priorities</div>
+                <div class="dropdown-links">
+                  <a href="#" class="link">Lithography & MicroChip</a>
+                  <a href="#" class="link">Battery Technology</a>
+                  <a href="#" class="link">Solar Panel Production</a>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ======================================================================================================================================== -->
+    <!-- ======================================================================================================================================== -->
+    <!-- Main Content Section -->
+    <div class="mainArea">
+      <div class="featuredNav">
+        <!-- Mobile Links DropDown -->
+        <!-- Desktop Links DropDown -->
+        <div class="drpDwnPane">
+          <div class="DrpdwnDiv" data-dropdown>
+            <button class="KWDrpdwnLnk" data-dropdown-button>Mobile Nav</button>
+
+            <div class="dropdown-menu information-grid">
+              <div>
+                <div class="dropdown-heading">Content Navigation</div>
+                <div class="dropdown-links">
+                  <a href="index.html" class="link">Introduction (Current Page)</a>
+                  <a href="mobile/mbl_advancedGov.html" class="link">A More Advanced Geo-Political Team</a>
+                  <a href="mobile/mbl_SPbrand.html" class="link">Strategic Pivot Brand</a>
+                  <a href="mobile/mbl_MMVs.html" class="link">Major Market Verticals</a>
+                  <a href="mobile/mbl_techSalvation.html" class="link">Tech Salvation</a>
+                  <!-- <a href="mobile/mbl_FUOB.html" class="link">Full Utilization of Brand Strategy</a> -->
+                  <!-- <a href="mobile/mbl_TIN.html" class="link">Proof the Time is Now</a> -->
+                  <!-- <a href="mobile/mbl_overview.html" class="link">Complete Project Overview</a> -->
+                  <!-- <a href="mobile/mbl_notes.html" class="link">Old Notes</a> -->
+                  <a href="#" class="link">** More on 1920x1080 Desktop **</a>
+                </div>
+              </div>
+            </div><!--  class="dropdown-menu information-grid"  -->
+          </div><!--  class="DrpdwnDiv"  -->
+        </div>
+        <div class="drpDwnPane">
+          <div class="DrpdwnDiv" data-dropdown>
+            <button class="KWDrpdwnLnk" data-dropdown-button>Desktop Nav</button>
+
+            <div class="dropdown-menu information-grid">
+              <div>
+                <div class="dropdown-heading">1920x1080 Content Navigation</div>
+                <div class="dropdown-links">
+                  <a href="index.html" class="link">Introduction (Current Page)</a>
+                  <a href="dsktp/dsktpDCKD_SPbrand.html" class="link">The Strategic Pivot Brand</a>
+                  <a href="dsktp/dsktpDCKD_MMVs.html" class="link">Major Market Verticals</a>
+                  <a href="dsktp/dsktpDCKD_FUOB.html" class="link">Full Utilization of Brand Strategy</a>
+                  <a href="dsktp/dsktpDCKD_TIN.html" class="link">Proof the Time is Now</a>
+                  <!-- <a href="dsktp/dsktpDCKD_research.html" class="link">Project Research</a> -->
+                  <!-- <a href="dsktp/dsktpDCKD_overview.html" class="link">Complete Project Overview</a> -->
+                  <a href="dsktp/dsktpDCKD_demoUX.html" class="link">Demo UX - DOCKED</a>
+                  <a href="pages/dsktpPOPOUT_demoUX.html" class="link">Demo UX - POPOUTS</a>
+                  <!-- <a href="dsktp/dsktpDCKD_aboutMe.html" class="link">About Me</a> -->
+                  <!-- <a href="dsktp/dsktpDCKD_notes.html" class="link">Old Notes</a> -->
+                </div>
+              </div>
+            </div><!--  class="dropdown-menu information-grid"  -->
+          </div><!--  class="DrpdwnDiv"  -->
+        </div>
+        <div class="drpDwnPane">
+            <div class="DrpdwnDiv">
+                <button class="KWDrpdwnLnk"><a href="pages/SPopenSourceInit.html" class="link">Open-Source Initiative</a></button>
+            </div>
+        </div>
+      </div>
+      <!-- ======================================================================================================================================== -->
+      <!-- ======================================================================================================================================== -->
+      <div class="featuredContent">
+        <!-- \/ DEBUG DATABASE CONNECTION \/-->
+        <div style="text-align:center; padding: 1%;">
+          <p style="font-size:35px; color: mintcream;">
+            <!-- Hello <?php echo "$firstName"; ?> with <?php echo "$company"; ?>...<br> -->
+            Welcome to <b>Strategic Pivot's</b> Pitch Page!<br><br>
+            First to draft a Continuous Improvement based National Project Management and Engagement Infrastructure<br><br>
+            Mission Founded<br>in 2019...
+          </p>
+        </div>
+        <!-- /\ DEBUG DATABASE CONNECTION /\ -->
+        <!-- \/ LOGO FEATURE \/ -->
+        <div class="logoPane">
+          <div class="logoImg" style="background-image: url('images/SPlogos/SPlogoOutline_WwhtBGlttrs2.png');">
+          </div>
+        </div>
+        <!-- /\ LOGO FEATURE /\ -->
+        <!-- ======================================================================================================================================== -->
+        <!-- ======================================================================================================================================== -->
+        <!-- \/ POST-Intro.1 ::|::-> The Art of the Deal that bonds us together over what Made America Great -->
+        <div class="postMain">
+          <div class="postHeader">
+            The Art of This Deal...
+          </div>
+          <div class="postTop">
+            <div class="adjTop">
+              <a href="https://www.youtube.com/channel/UCA9d4ssL25kcxVHXw6rvTNw">
+                <div class="contentLinkPane">
+                  <div class="contentBanner" style="background-image: url('images/HscrollDemoImages/SP_YouTubeBanner.png');">
+                  </div>
+                  <div class="contentVid">
+					<!-- YouTube Video Link -->
+                    <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/3b0tOADkqjE?si=G1R96vl1qvmXmR4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="postDivider">
+          </div>
+          <div class="postBottom">
+              I'm not picking sides... I want to bring everyone together as much as possible in this moment.  It took me some time to decide on the deal I want.  The deal I want has me working with Donald Trump and Elon Musk, ultimately for US President Kamala Harris and the American public.<br><br>
+              I found a way to pay off the <b>National Debt</b> over the course of 50 years through <b>"The Art of a Deal"</b> so perfect... It brings everyone together over exactly what <b>"Made America Great"</b> on numerous levels we can all agree on.<br><br>
+              This solution is a unique blend between knowing the opportunity before us, as well as the market problems we face, and will continue to face in increasing levels of complexity.<br><br>
+              We need a plan for working through these conversations at scale to the best of our ability.<br><br>
+              Not only will this video describe a viable plan for a <b>National Debt</b> solution... but it maximizes the moment through <b>"The Art of The Deal"</b> described.<br><br>
+              Arguably... this is the perfect plan... which extends the <b>America Identity</b> approproately into the modern age... and galvanizes our nation through a moment of <b>Global Leadership</b>.<br><br>
+              <b>Strategic Pivot</b>, as I present it, is 3 part...<br>
+              <b>1)</b> It's a Social-Media extension, and is intended to be a new general way of looking at modern digital markets.  It's likely the only way for many markets to achieve their potential.<br>I have a desktop Demo of this new UX aimed to be implemented between Social-Media class products in an <b>Open Market</b> competition.<br><br>
+              <b>2)</b> The <b>Open Market Concept</b> is an expansion of Open-Source philosophy applied to what is best termed as <b>Major Market Verticals</b>... which together comprise an overall platform. An overall platform managed as an extension of our geo-political identity through the creation of...
+              <br><br>
+              <b>3)</b> A <b>"Complex Insurance For Bailouts, Shutdowns, and a Really Interactive Tax-Program"</b> that businesses can organize to enable by placing a Fortune 500 Board in charge of a fee/tax competitive with Federal/State Sales Tax.<br><br>
+              Businesses in this network would create this fund to enable a collaborative but also private sector competitive atmosphere overall.  One in which the private sector works together to enable this overall collaborative dynamic.  It's dependent on a number of compromises but positions us to be a stronger overall team.<br><br>
+              This fund can be used for the National Debt, Fortune 500 approved bailouts, or to cover defaults on government contracts.<br><br>
+              The board will market the interactive Tax-Program which stimulates investment in key growth areas approved by both Gov & Fortune 500 Board.  As this dynamic advances... these funds can be used to stimulate more growth through grant or other programs the Fortune 500 board would manage.<br><br>
+              It's a great compromise... as the MMV model is a democratic solution similar to the US Constitution which also enables a Cyber-Force and a much more advanced geo-political set of opportunities.<br>
+              <br>
+              I explain how to get to the project overview page in the above video.<br>
+              <br>
+              <b>Thanks for watching!</b><br>
+              <br>
+              <u>To Network... Please Contact...</u><br>
+              <b>Brandon Helm</b><br>
+              <b>(651) 775-2272</b><br>
+              <b>brandon.helm@strategicpivot.com</b><br>
+              <br>
+              If this video/concept still sounds foreign and confusing... it may be best for you to dig into the following page on "A More Advanced Geo-Political Team"...<br>
+              <a href="mobile/mbl_advancedGov.html"><b>A More Advanced Geo-Political Team</b></a><br>
+              <br>
+              I added a second video specific to Donald Trump, Elon Musk, & Mark Cuban... because I have better plan for the National Debt... as well as how to build this efficiency bureau you are now talking about...<br>
+              <a href="https://youtu.be/I_znEUMpTwo?si=5Dhm3niHvjDlPCuL"><b>Second Video</b></a>
+          </div>
+        </div>
+        <!-- /\ POST-Intro.1 ::|::-> The Art of the Deal that bonds us together over what Made America Great -->
+        <!-- ======================================================================================================================================== -->
+        <!-- \/ POST-Intro.2 ::|::-> The Logo, The Vision, The Mission -->
+        <div class="postMain">
+          <div class="postHeader">
+            The Logo, The Vision, The Mission...
+          </div>
+          <div class="postTop">
+            <div class="adjTop">
+              <a href="https://www.youtube.com/channel/UCA9d4ssL25kcxVHXw6rvTNw">
+                <div class="contentLinkPane">
+                  <div class="contentBanner" style="background-image: url('images/HscrollDemoImages/SP_YouTubeBanner.png');">
+                  </div>
+                  <div class="contentVid">
+                    <!-- <iframe width="100%" height="100%" src="https://youtu.be/3b0tOADkqjE?si=uCfjECbgTuH8U3a9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DJ-W4bEDd0o?si=M31f5cqkWJYmg4vI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="postDivider">
+          </div>
+          <div class="postBottom">
+            <u>The Logo, The Vision, The Mission</u><br>
+            Multi-Cultural global mission of world peace and keeping critical awareness close to heart.<br>
+            Talk about the art in engineering solutions and the legacy of Damascus Steel.<br>
+            <br>
+            I should have pointed out how...<br>
+            Those saying things like Commie-La Harris...<br>
+            <br>
+            This offends me greatly, because I try to be bold about the reality...<br>
+            Having some central economic goals... with Green Energy or the CPU Chips Act & related Supply Chain Goals...<br>
+            Those are good ideas... and other nations organizing to try this different ways isn't inherintly wrong...<br>
+            One of the huge points of Strategic Pivot is to prove... We too can manage our own Industrial Policy in more accessible ways.<br>
+            <br>
+            So my point is... those saying things like Commie-La Harris...<br>
+            You're de-railing critical thinking development of our society.<br>
+            We could have such much deeper conversations in those moments but you rob society of that growth opportunity in how you manage that triggerring word.<br>
+            <!-- <br>
+            As a result... those people do not get to make the case they care more than people who work to not make that mistake.<br>
+            They don't care about the productivity or the national debt as much...<br>
+            Because they are derailing the development opportunity that makes us a stronger more productive team.<br> -->
+            <br>
+            <br><u>To Network... Please Contact...</u><br>
+            <b>Brandon Helm</b><br>
+            <b>(651) 775-2272</b><br>
+            <b>brandon.helm@strategicpivot.com</b>
+          </div>
+        </div>
+        <!-- /\ POST-Intro.2 ::|::-> The Logo, The Vision, The Mission -->
+         <!-- ======================================================================================================================================== -->
+        <!-- \/ POST-Intro.3 ::|::-> Web-Pitch Overview -->
+        <div class="postMain">
+          <div class="postHeader">
+            Web-Pitch Overview...
+          </div>
+          <div class="postTop">
+            <div class="adjTop">
+              <a href="https://www.youtube.com/channel/UCA9d4ssL25kcxVHXw6rvTNw">
+                <div class="contentLinkPane">
+                  <div class="contentBanner" style="background-image: url('images/HscrollDemoImages/SP_YouTubeBanner.png');">
+                  </div>
+                  <div class="contentVid">
+                    <!-- <iframe width="100%" height="100%" src="https://youtu.be/3b0tOADkqjE?si=uCfjECbgTuH8U3a9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FJJjPJWwcec?si=i-s9xTSo9xdu_bc6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="postDivider">
+          </div>
+          <div class="postBottom">
+            Explanation of this Web-Pitch overview and related project goals.<br>
+            <br>
+            <br><u>To Network... Please Contact...</u><br>
+            <b>Brandon Helm</b><br>
+            <b>(651) 775-2272</b><br>
+            <b>brandon.helm@strategicpivot.com</b>
+          </div>
+        </div>
+        <!-- /\ POST-Intro.3 ::|::-> Web-Pitch Overview -->
+        <!-- ======================================================================================================================================== -->
+        <!-- ======================================================================================================================================== -->
+        <div class="contactFooter">
+        <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vDVgIXMI-Wo" title="Arkray Vital Meter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

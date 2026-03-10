@@ -1,0 +1,640 @@
+/* IMPORTED FONT STYLES */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+
+/* VARIABLES */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+:root {
+    --transition-bg-color1: #10303e;  /* Dark Blue */
+    --transition-bg-color2: #4b8b7b; /* Teal Blue-Green */
+    --main-outer-bg: rgb(14,64,66);           /* Main Outer Background; Slightly lighter/greener than Nav Backgrounds */
+
+    --accent2: rgb(50,103,101);         /* Scrollbar BackGround */
+    --accent3: rgb(16,48,62);           /* Dark Blue in KWT queryNav & FeaturePage Internal Header Background */
+
+    --light-border-color: rgb(241, 227, 164); /* rgb(241,227,164)  --> Light Tan */
+    --dark-border-color: #E7CD78;            /* #E7CD78;  --> Mid Gold */
+
+    --button-text-color: rgb(16,48,62);   /* DarkBlue matching Inner Header & Knowledge Web/Tree Background */
+    --button-bg-color: #FCFBFC;
+    --scroll-button-bg-color: #FCFBFC;
+    --button-triangle-color: #404040;     /* Dark Grey */
+    --hover-color: #DAA520;            /* #DAA520;  --> Deep/Dark Gold */
+    --dropdown-hover-bg: #D1F0EA;
+
+    --primary-pane-bg-color: antiquewhite;        
+    --light-pane-bg-color: #FCFBFC;          /* #FCFBFC  --> Frost (light-blue) */
+    --dark-pane-bg-color: rgb(16,48,62);           /* Dark Blue in KWT queryNav & FeaturePage Internal Header Background */
+
+    --light-text-color: #FCFBFC;
+    --primary-text-color: #404040;     /* Dark Grey */
+
+    --main-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* MAIN BODY/PAGE STYLES */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+body {
+    overflow: hidden; /* Prevents double scrollbars */
+    background-color: var(--main-outer-bg);
+    color: var(--light-text-color);
+    font-family: var(--main-font-family);
+}
+
+/* Links to 28th Amendment and Legacy Pitch Pages on index.html */
+.link-blue-bg {
+    color: aquamarine;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.link-blue-bg:hover {
+    color: var(--hover-color);
+}
+
+/* Main links in body style */
+.main-link {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.main-link:hover {
+    text-decoration: underline aquamarine;
+    color: var(--button-text-color);
+}
+
+/* Headers styling */
+.black-text-gold-underline {
+    text-align: center;
+    color: black;
+    text-decoration: underline var(--dark-border-color);
+}
+
+/* Card-Styles */
+.card-styling {
+    background-color: var(--primary-pane-bg-color) !important;
+    color: var(--primary-text-color) !important;
+    border: 2px solid var(--dark-border-color) !important;
+}
+
+/* BOOT-STRAP FRAME-WORK OVER-RIDE STYLES */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.container {
+    border-radius: 14px;
+}
+
+.card { /* Newsletter cards on newsletters.html; Overrides bootstrap */
+    background-color: var(--primary-pane-bg-color) !important;
+    color: var(--primary-text-color) !important;
+    border: 2px solid var(--dark-border-color) !important;
+}
+
+.row .col-sm-12 {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+}
+
+/* MAIN NAV-BAR AND NAV-LINK STYLES */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.navbar {
+    position: relative;
+    height: 70px;
+    width: 100%;
+    z-index: 1020;
+    background-color: var(--dark-pane-bg-color);
+    border-bottom: 3px solid var(--dark-border-color);
+    padding: 0;
+}
+
+.navbar-dark,
+.bg-dark {
+    background-color: var(--dark-pane-bg-color) !important;
+}
+
+.navbar-nav {
+    background-color: var(--dark-pane-bg-color) !important;
+}
+
+.custom-navbar-dropdown {
+    background-color: var(--dark-pane-bg-color) !important;
+    border: 1px solid var(--dark-border-color);
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.custom-navbar-dropdown .dropdown-item {
+    color: #adb5bd !important; /* Bootstrap nav-item default (light grey) */
+    background-color: transparent;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.custom-navbar-dropdown .dropdown-item.active,
+.custom-navbar-dropdown .dropdown-item:active {
+    color: #fff !important; /* Brighter white for active, like nav-link active */
+    background-color: transparent !important;
+}
+
+.custom-navbar-dropdown .dropdown-item:hover, .custom-navbar-dropdown .dropdown-item:focus {
+    background-color: var(--dropdown-hover-bg) !important;
+    color: black !important;
+}
+
+.dropdown-menu .dropdown-divider {
+    border-top: 1px solid var(--dark-border-color);
+    margin: 0.5rem 0;
+    opacity: .6;
+}
+
+.nav-link {
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+.nav-link:hover {
+    color: var(--hover-color) !important;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    background-color: var(--button-bg-color) !important;
+    color: var(--button-text-color) !important;
+    outline: none;
+    border: 2px solid var(--light-border-color) !important;
+}
+
+.btn:hover {
+    background-color: var(--dropdown-hover-bg) !important;
+    color: var(--hover-color) !important;
+    border: 2px solid var(--hover-color) !important;
+}
+
+button.nav-link {
+    font-weight: 600;
+    margin: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+#signup-nav-btn {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0rem;
+    padding: .375rem .75rem;
+    height: 100%;
+    margin: auto 0;
+}
+
+#logout-nav-btn {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0rem;
+    padding: .375rem .75rem;
+    height: 100%;
+    margin: auto 0;
+}
+
+/* Dropdown Styles */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.dropdown-menu .custom-navbar-dropdown {
+    background-color: var(--dark-pane-bg-color) !important;
+    border: 1px solid var(--dark-border-color);
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown-menu.custom-navbar-dropdown .dropdown-item {
+    color: var(--bs-nav-link-color);
+    background-color: transparent;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu.custom-navbar-dropdown .dropdown-item:hover,
+.dropdown-menu.custom-navbar-dropdown .dropdown-item:focus {
+    background-color: var(--dropdown-hover-bg) !important;
+    color: black !important;
+}
+
+.dropdown-menu.custom-navbar-dropdown .dropdown-divider {
+    border-top: 1px solid var(--dark-border-color);
+}
+
+/* SLIDER-NAV - Used for Newsletter Categories and Priorities Year */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* Container to restrict width */
+.categories-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Wrapper that handles horizontal scroll */
+.categories-wrapper {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    overflow-x: auto;
+    /* HIDE SCROLLBARS BUT KEEP FUNCTIONALITY */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.categories-wrapper::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* Styling for items */
+.category-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    padding: 8px 16px;
+    margin: 1rem .5rem;
+    background-color: var(--button-bg-color);
+    border: 2px solid var(--light-border-color);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--button-text-color);
+    cursor: pointer;
+    white-space: nowrap; /* Keep text on one line */
+    transition: background 0.3s;
+}
+.category-item:hover {
+    background-color: var(--dropdown-hover-bg);
+    border: 2px solid var(--hover-color);
+    color: var(--hover-color);
+}
+
+#newsletter-search {
+    border-radius: 8px;
+    width: 80%;
+    height: 2.5rem;
+    max-width: 400px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    outline: 4px solid var(--dark-border-color); }
+
+/* MAIN SCROLLABLE CONTENT CONTAINER */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.scroll-container {
+    height: calc(100vh - 70px); /* Full viewport height minus navbar height */
+    width: 100%;
+    overflow-y: auto; /* Adds a vertical scrollbar to this specific container */
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+    /* Optional: Add a semi-transparent background to improve readability */
+    background-color: var(--main-outer-bg); 
+    box-sizing: border-box; /* Ensures padding is included in height calculation */
+}
+
+.internal-container {
+    height: auto; /* Set large for demonstration purposes */
+    margin: 20px; /* To avoid being hidden behind the fixed navbar */
+    width: calc(100% - 40px);
+    background: linear-gradient(0.5turn, #10303e, #4b8b7b, #10303e);
+    border: 3px solid var(--dark-border-color);
+    border-radius: 14px;
+}
+
+/*  ALL SCROLL-BAR AND BUTTON SETTINGS; Note -webkit-scrollbar is only for some browsers */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.scroll-container::-webkit-scrollbar {
+    width: 2.4vh;
+    height: 2.4vh;}
+.scroll-container::-webkit-scrollbar-track {
+    background: var(--accent2);
+    border-radius: .7vh;}
+.scroll-container::-webkit-scrollbar-thumb {
+    background: var(--light-border-color);
+    border-radius: .7vh;}
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+        background: var(--hover-color);}
+/* Buttons */
+.scroll-container::-webkit-scrollbar-button {
+    border-style: solid;
+    height: 2.1vh;
+    width: 2.1vh;}
+/* Up */
+.scroll-container::-webkit-scrollbar-button:vertical:decrement {
+    border-width: 0 1.1vh 2.2vh 1.1vh;
+    border-color: var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--button-triangle-color) var(--scroll-button-bg-color); }
+    .scroll-container::-webkit-scrollbar-button:vertical:decrement:hover {
+        border-color: transparent transparent var(--hover-color); }
+/* Down */
+::-webkit-scrollbar-button:vertical:increment {
+    border-width: 2.2vh 1.1vh 0 1.1vh;
+    border-color: var(--button-triangle-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color); }
+        .scroll-container::-webkit-scrollbar-button:vertical:increment:hover {
+            border-color: var(--hover-color) transparent transparent transparent; }
+/* Left */
+.scroll-container::-webkit-scrollbar-button:horizontal:decrement {
+    border-width: 1.1vh 2.2vh 1.1vh 0;
+    scroll-margin: 100px;
+    border-color: var(--scroll-button-bg-color) var(--button-triangle-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color); }
+        .scroll-container::-webkit-scrollbar-button:horizontal:decrement:hover {
+            border-color: transparent var(--hover-color) transparent transparent; }
+/* Right */
+.scroll-container::-webkit-scrollbar-button:horizontal:increment {
+    border-width: 1.1vh 0 1.1vh 2.2vh;
+    border-color: var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--scroll-button-bg-color) var(--button-triangle-color); }
+        .scroll-container::-webkit-scrollbar-button:horizontal:increment:hover {
+            border-color: transparent transparent transparent var(--hover-color); }
+
+/* Login/Register Pop-up Window Styles */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.login-register-greyout {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1050;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-register-modal-content {
+    background: var(--main-outer-bg);
+    color: var(--light-text-color);
+    border: 3px solid var(--dark-border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    width: calc(95% - 2rem - 6px - 4.8vh); /* 95% width minus padding, border, and scrollbar */
+    max-width: 600px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Center buttons in popup forms */
+.login-register-modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-register-modal-content form button[type="submit"] {
+    align-self: center;
+}
+
+form {
+    width: 95% !important;
+}
+
+/* mb-3 is used in the login/signup */
+.mb-3 {
+    width: 80%;
+}
+    
+/* Make input elements take up 90% of modal content */
+form input[type="text"], input[type="password"], input[type="email"] {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--button-bg-color);
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1100;
+    transition: color 0.2s;
+}
+.close-btn:hover {
+    color: var(--hover-color);
+}
+
+/* HomePage Styles */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* Fade-in animation for logo image */
+#fade-in-logo {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeInLogo 1.5s ease-in forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    10% {
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Newsletters Styles */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.bg-secondary {
+    background-color: var(--primary-pane-bg-color) !important;
+    color: var(--primary-text-color) !important;
+}
+
+/* Priorities Styles */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.table-hover tbody tr:hover {
+    background-color: var(--dropdown-hover-bg);
+    cursor: pointer;
+}
+
+.btn-priorities-list {
+    margin-bottom: .5rem;
+}
+
+/* Top Projects Styles */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+#priority-search {
+    border-radius: 8px;
+    width: 80%;
+    height: 2.5rem;
+    max-width: 400px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    outline: 2px solid var(--dark-border-color);
+}
+
+/* Admin Dashboard Styles*/
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.projects-table {
+    width:90%;
+    margin:auto;
+    color:black;
+    border: 1px solid black;
+}
+.projects-table td {
+    padding: .5rem 0;
+    border-bottom: 1px solid black;
+}
+.projects-table td:nth-child(2) {
+    text-align: center;
+}
+.projects-table thead th:nth-child(2) {
+    text-align: center;
+}
+.projects-table th {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid black;
+}
+.projects-table tr:nth-child(odd) {
+    background-color: var(--dropdown-hover-bg); /* Light gray tint for even rows */
+}
+.projects-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray tint for even rows */
+}
+
+/* Your Projects Div */
+.d-pad-1 {
+    margin-left: 1rem !important;
+}
+/* Followed Projects Div */
+/* .d-pad-2 {} */
+/* Followed Projects Div */
+.d-pad-3 {
+    margin-left: 1rem !important;
+}
+
+.alerts-table {
+    width: 100%;
+    color:black;
+    border: 1px solid black;
+}
+.alerts-table td {
+    border-bottom: 1px solid black;
+    padding-top: .4rem;
+}
+.alerts-table th {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid black;
+}
+.alerts-table tr:nth-child(odd) {
+    background-color: var(--dropdown-hover-bg); /* Light gray tint for even rows */
+}
+.alerts-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray tint for even rows */
+}
+
+/* Profile Management Styles*/
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+#user-profile-form {
+    width: 100%;
+    color: black;
+}
+#user-profile-form h5 {
+    margin-bottom: 1rem;
+}
+#user-profile-form label {
+    margin-bottom: 0.5rem;
+}
+#user-profile-form input[type="checkbox"] {
+    margin-bottom: 1rem;
+}
+#user-profile-form input[type="text"], #user-profile-form input[type="email"] {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--dark-border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+    outline: none;
+}
+#user-profile-form input[type="text"]:hover, #user-profile-form input[type="email"]:hover {
+    outline: 3px solid var(--hover-color);
+}
+/* Profile - MGMT --> Upload/Preview/Crop Image */
+.img-crop-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+.crop-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background: none !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+.preview-container, .cropped-preview-container {
+    margin-top: 40px; /* More margin at the top */
+    border: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+        background: none !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+}
+.hidden {
+    display: none;
+}
+#saveImgButton {
+    margin: 2rem auto;
+}
+.comment-pane {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    height: auto; /* Match .current-img-pane height */
+}
+.current-img-pane {
+    width: 117px;
+    height: 156px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#current-image {
+    border-radius: 8px;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.comment-text-body {
+    flex: 1 1 0;
+    height: 100%;
+    display: flex;
+    margin: .5rem 0 0rem .5rem;
+}
+.comment-text {
+    padding: 0;
+    margin: 0;
+}
+.cmnt-header-text {
+    padding: 0;
+    margin: .5rem 0 0rem .5rem;
+}

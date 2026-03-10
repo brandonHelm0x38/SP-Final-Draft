@@ -1,0 +1,211 @@
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/* THIS CODE IS FOR BOTH THE MAIN STRATEGIC PIVOT UI/UX, AS WELL AS THE PAGE MANAGEMENT PAGE FOR PAGE OWNERS */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+    /* background-color: #FBFCF8;  --> Pearl (off-white) */
+    /* background-color: #FEF9F3;  --> Alabaster (light-tan) */
+    /* background-color: #F8EEEC;  --> Salt (slightly-darker,light-tan) */
+    /* background-color: #F8F2ED;  --> Lace (similar to above) */
+    /* background-color: #FCFBFC;  --> Frost (light-blue) */
+    :root {
+      --lghtBrdr: rgb(241, 227, 164); /* rgb(241,227,164)  --> Light Tan */
+      --darkBrdr: #E7CD78;            /* #E7CD78;  --> Mid Gold */
+  
+      --bttnTextClr: rgb(16,48,62);   /* DarkBlue matching Inner Header & Knowledge Web/Tree Background */
+      --bttnBkGrnd: #FCFBFC;          /* #FCFBFC  --> Frost (light-blue) */
+      /*--bttnBkGrnd: antiquewhite;*/     /* Self */
+      --ScrlBttnBkGrnd: antiquewhite;     /* Self */
+      --bttnTriangleClr: #404040;     /* #404040;  --> Dark Grey */
+      --hoverClr: #DAA520;            /* #DAA520;  --> Deep/Dark Gold */
+  
+      /*--ftPanesBkGrnd: mintcream;*/     /* #FCFBFC  --> Frost (light-blue) */
+      --ftPanesBkGrnd: antiquewhite;        
+      --usrPanesBkGrnd: #FCFBFC;          /* #FCFBFC  --> Frost (light-blue) */
+      /*--usrPanesBkGrnd: mintcream;*/    /*  */
+      --hScrlPanesBkGrnd: #FCFBFC;        /* #FCFBFC  --> Frost (light-blue) */
+  
+      --accent1: rgb(14,64,66);           /* Main Outer Background - Slightly lighter/greener than Nav Backgrounds */
+      --accent2: rgb(50,103,101);         /* Scrollbar BackGround - Lighter  than main background */
+      --accent3: rgb(16,48,62); }         /* Dark Blue in Pop-Out Pane Buttons, KW queryNav, and featureNav (presentation Mode button area) */
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  background-color: var(--accent1);
+  /* background: linear-gradient(to right, #e2e2e2, #c9d6ff); */
+}
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/* FORMS AND SIGN-IN -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+.container {
+  background: antiquewhite;
+  width: 340px;
+  padding: 1.5rem;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
+}
+form {
+  margin: 0 2rem;
+}
+.form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+input {
+  color: inherit;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #757575;
+  padding-left: 1.5rem;
+  font-size: 15px;
+}
+.input-group {
+  padding: 4% 0;
+  position: relative;
+}
+.input-group i {
+  position: absolute;
+  color: black;
+}
+input:focus {
+  background-color: transparent;
+  outline: transparent;
+  border-bottom: 2px solid var(--hoverClr));
+}
+input::placeholder {
+  color: transparent;
+}
+label {
+  color: #757575;
+  position: relative;
+  left: 1.2rem;
+  top: -.1rem;
+  cursor: auto;
+  transition: 0.3s ease all;
+}
+i input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  top: -0em;
+  color: var(--hoverClr);
+  font-size: 15px;
+}
+/* .recover {
+  text-align: right;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.recover a {
+  text-decoration: none;
+  color: rgb(125, 125, 235);
+}
+.recover a:hover {
+  color: blue;
+  text-decoration: underline;
+} */
+.btn {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  border-radius: 5px;
+  outline: none;
+  border: .4vh solid var(--lghtBrdr);
+  width: 100%;
+  background: var(--bttnBkGrnd);
+  color: var(--bttnTextClr);
+  cursor: pointer;
+  transition: 0.9s;
+}
+.btn:hover {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  color: var(--hoverClr);
+  background: #FFE5BD;
+  border: .4vh solid var(--bttnTextClr);
+}
+.or { 
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.icons {
+  text-align: center;
+}
+.icons i {
+  color: rgb(125, 125, 235);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 2px solid #dfe9f5;
+  margin: 0 15px;
+  transition: 1s;
+}
+.icons i:hover {
+  background: #07001f;
+  font-size: 1.6rem;
+  border: 2px solid rgb;
+}
+.links {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  padding: 0 4 rem;
+  margin-top: 0.9rem;
+  font-weight: bold;
+}
+button {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  border-radius: 5px;
+  outline: none;
+  border: .4vh solid var(--lghtBrdr);
+   width: 100%;
+  background: var(--bttnBkGrnd);
+  color: var(--bttnTextClr);
+  cursor: pointer;
+  transition: 0.9s;
+}
+button:hover {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  color: var(--hoverClr);
+  background: #FFE5BD;
+  border: .4vh solid var(--bttnTextClr);
+}
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/* NAVIGATION BAR ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  border: .4vh solid var(--darkBrdr);
+  border-radius: 1vh;
+  padding: 0vh 1vw;
+  margin: 1vh 1vw;
+  width: 98%;
+}
+.spLogo_whiteBGwLetters{
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: auto;
+  height: 100%;
+}
+.rBlock {
+  display: flex;
+  flex-direction: column;
+}
+.navBtn {
+  background-color: var(--bttnBkGrnd);
+  height: 40%;
+  width: 100%;
+}
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/* FEATURE SECTION -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+

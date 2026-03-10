@@ -1,0 +1,1118 @@
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/* THIS CODE IS FOR BOTH THE MAIN STRATEGIC PIVOT UI/UX, AS WELL AS THE PAGE MANAGEMENT PAGE FOR PAGE OWNERS */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+    /* background-color: #FBFCF8;  --> Pearl (off-white) */
+    /* background-color: #FEF9F3;  --> Alabaster (light-tan) */
+    /* background-color: #F8EEEC;  --> Salt (slightly-darker,light-tan) */
+    /* background-color: #F8F2ED;  --> Lace (similar to above) */
+    /* background-color: #FCFBFC;  --> Frost (light-blue) */
+:root {
+    --lghtBrdr: rgb(241, 227, 164); /* rgb(241,227,164)  --> Light Tan */
+    --darkBrdr: #E7CD78;            /* #E7CD78;  --> Mid Gold */
+
+    --bttnTextClr: rgb(16,48,62);   /* DarkBlue matching Inner Header & Knowledge Web/Tree Background */
+    /*--bttnBkGrnd: antiquewhite;*/     /* Self */
+    --bttnBkGrnd: #FCFBFC;
+    --ScrlBttnBkGrnd: antiquewhite;
+    --bttnTriangleClr: #404040;     /* Dark Grey */
+    --hoverClr: #DAA520;            /* #DAA520;  --> Deep/Dark Gold */
+
+    /*--ftPanesBkGrnd: mintcream;*/          /* #FCFBFC  --> Frost (light-blue) */
+    --ftPanesBkGrnd: antiquewhite;        
+    --usrPanesBkGrnd: #FCFBFC;          /* #FCFBFC  --> Frost (light-blue) */
+    /*--usrPanesBkGrnd: mintcream;*/    /*  */
+    --hScrlPanesBkGrnd: #FCFBFC;        /* #FCFBFC  --> Frost (light-blue) */
+
+    --accent1: rgb(14,64,66);           /* Main Outer Background; Slightly lighter/greener than Nav Backgrounds */
+    --accent2: rgb(50,103,101);         /* Scrollbar BackGround */
+    --accent3: rgb(16,48,62);           /* Dark Blue in KWT queryNav & FeaturePage Internal Header Background */
+    --accent4: pink; }                  /* Unused */
+
+html {}
+
+body {
+    background-color: var(--accent1);
+    position: relative;
+    margin: 0px;}
+
+/*  TOP SECTION (1of3 VERTICAL SECTIONS)   -->   LEFT:: CHI PRIORITY & FOCUS YEAR   ;|   MIDDLE:: FEATURE-FLAGS   ;|   RIGHT:: BLOOMBERG   */
+/*  TOP SECTION (1of3 VERTICAL SECTIONS)   -->   LEFT:: CHI PRIORITY & FOCUS YEAR   ;|   MIDDLE:: FEATURE-FLAGS   ;|   RIGHT:: BLOOMBERG   */
+/*  TOP SECTION (1of3 VERTICAL SECTIONS)   -->   LEFT:: CHI PRIORITY & FOCUS YEAR   ;|   MIDDLE:: FEATURE-FLAGS   ;|   RIGHT:: BLOOMBERG   */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-(1of3 VERTICAL SECTIONS)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(1of3 VERTICAL SECTIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(1of3 VERTICAL SECTIONS)~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.header1 {
+    position: relative;
+    display: flex;
+    /* background-image: url("images/BGtextures/SP_BlankHeaderFade1880x100.png"); */
+    background: linear-gradient(0.25turn, #10303e, #4b8b7b, #10303e);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-color: var(--darkBrdr);
+    border-width: .4vh .2vw;
+    border-radius: 1.4vh;
+    padding: 1vh .5vw;
+    margin: 1.3vh .8vw;
+    height: 8.6vh;
+    width: 97.2vw; }
+    .spLogo_whiteBGwLetters {}
+    .SPcolumn {}
+        .SPnameDiv {
+            height: 3.8vh;
+            width: 30vw; }
+        .prioritySelectDiv {
+            display: flex;
+            height: 2.4vh;
+            width: 30vw; }
+        .yearSelectDiv {
+            display: flex;
+            height: 2.4vh;
+            width: 30vw; }
+    .featureColumn {
+        margin-left: 8vw;
+        display: flex; }
+        /* Depending on what is being featured, typically one Brand-Focus-Partner will be listed; Could be multiple listed, but that will be more rare */
+    .bloombergColumn {
+        position: absolute;
+        right: .5vw; }
+
+/* CENTRAL SECTION (2of3 VERTICAL SECTIONS) --> LEFT::FEATURE-PAGE & RIGHT::USER-SPECIFIC-NAVIGATION & RELATED KNOWLEDGE TREE STATS & BADGES /*/
+/* CENTRAL SECTION (2of3 VERTICAL SECTIONS) --> LEFT::FEATURE-PAGE & RIGHT::USER-SPECIFIC-NAVIGATION & RELATED KNOWLEDGE TREE STATS & BADGES /*/
+/* CENTRAL SECTION (2of3 VERTICAL SECTIONS) --> LEFT::FEATURE-PAGE & RIGHT::USER-SPECIFIC-NAVIGATION & RELATED KNOWLEDGE TREE STATS & BADGES /*/
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-(2of3 VERTICAL SECTIONS)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(2of3 VERTICAL SECTIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(2of3 VERTICAL SECTIONS)~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.centralSection {
+    position: relative;
+    background-color: transparent;
+    margin: 1.4vh .8vw;
+    height: 60vh;
+    display: flex; }
+    /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+    /* GOTO-SECTION  --->  ALTERNATE PANE STYLES = {.featSectBG_Collapsed && .featSectBG_FULL}  ---------->>  GOTO LINE {TODO-->AfterPitch} */
+    /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+    .featureMAINpane {
+        background-color: transparent;
+        height: 60vh; }
+        .featureInternalHeader {
+            position: relative; 
+            background-color: var(--accent3);
+            border-top: .5vh solid var(--darkBrdr);
+            border-left: .2vw solid var(--darkBrdr);
+            border-right: .2vw solid var(--darkBrdr);
+            border-radius: 1.4vh 1.4vh 0vh 0vh;
+            height: 4.5vh; }
+            .featureBttnsPane {
+                display: flex;
+                height: 4vh;
+                width: 30.6vw;
+                border-bottom: .6vh solid var(--lghtBrdr); }
+                .linkAddContentBttn {
+                    position: relative;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    margin-left: .2vw;
+                    background-color: var(--bttnBkGrnd);
+                    border-width: .3vh .15vw;
+                    border-color: var(--darkBrdr);
+                    border-style: solid;
+                    border-radius: .6vh;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    color: rgb(16,48,62);
+                    padding: .2vh .4vw .1vh .4vw; }
+                .commentsFilterDropDown {
+                    position: relative;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    margin-left: .2vw;
+                    background-color: var(--bttnBkGrnd);
+                    border-width: .3vh .15vw;
+                    border-color: var(--darkBrdr);
+                    border-style: solid;
+                    border-radius: .6vh;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    color: rgb(16,48,62);
+                    padding: .2vh .4vw .1vh .4vw; }
+                .taxCreditPrgmFlag {
+                    position: relative;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    margin-left: .2vw;
+                    background-image: url("images/FlagThmb1.png");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    border-width: .3vh .15vw;
+                    border-color: var(--darkBrdr);
+                    border-style: solid;
+                    border-radius: .6vh;
+                    font-family: Helvetica;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+                    color: mintcream;
+                    padding: .2vh .4vw .1vh .4vw; }
+            .scrlTxtPnWrppr1 {
+                position: absolute;
+                z-index: 200;
+                top: -.5vh;
+                right: 1.6vw;
+                border-radius: .8vh .8vh 0vh 0vh;
+                border-top: .6vh solid var(--lghtBrdr);
+                border-left: .35vw solid var(--lghtBrdr);
+                border-right: .35vw solid var(--lghtBrdr);
+                transform: skew(-20deg); }
+                .scrlTxtPnWrppr2 {
+                    z-index: 200;
+                    border-left: .2vw solid var(--darkBrdr);
+                    border-right: .2vw solid var(--darkBrdr); }
+                    .scrollingTextPane {
+                        background-color: var(--ftPanesBkGrnd);
+                        height: 3.3vh;
+                        margin: .2vh .1vw .2vh .1vw;
+                        font-family: Helvetica;
+                        font-size: 2vh;
+                        color: var(--bttnTriangleClr);
+                        padding: .8vh 1vw 0vh 1vw; }
+        .featSectBG_STD {
+            /* background-image: url("images/BGtextures/RectangularFade_LeftFEATUREpane.png"); */
+            background: linear-gradient(0.5turn, #10303e, #4b8b7b, #10303e);
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            border-style: solid;
+            border-color: var(--darkBrdr);
+            border-width: .4vh .4vw .4vh .2vw;
+            border-radius: 0px 0px 1.4vh 1.4vh; }
+            .VscrollPane_brdrWrap {  }
+                /* It SHOULD be possible to code these embedded div scroll panes to work in all 3 collapse/expand states, with any of the 3 above background panes being called/defined... the below code then fills the pane */
+                div.featurePageVscroll {
+                    padding: .0vh .7vw;
+                    height: 54.3vh;
+                    overflow-x: hidden;
+                    overflow-y: scroll; }
+                    /* Phantom scrollable pane for extending content beyond scrollable div bounds */
+                    .featureVscroll_phantom {
+                        height: 2800px;
+                        overflow-x: hidden;
+                        overflow-y: hidden; }
+                        /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+                        /* GOTO-SECTION   --->   FEATURE CONTENT POSTS & PROFILE DIVS   ---------->>   GOTO LINE {[~380]} */
+                        /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+
+    /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+    /* GOTO-SECTION  --->  ALTERNATE PANE STYLES = {.userNavPane_Collpased && .userNavPane_FULL}  ---------->>  GOTO LINE {~738} */
+    /* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+    .userNavPane {
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        border-style: solid;
+        border-color: var(--darkBrdr);
+        border-width: .4vh .4vw .4vh .2vw;
+        border-radius: 1.4vh;
+        height: 59.2vh;
+        margin-left: 1.9vh; }
+        .top_gl_div {
+            background: linear-gradient(0.00turn, #10303e, #4b8b7b, #10303e);
+            background-size: cover;
+            height: 47.3vh;
+            width: 21.1vw;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            position: relative; }
+            .gl_ux_pane {
+                /* margin-left: .5vw; */
+                background-color: var(--usrPanesBkGrnd);
+                height: 430px;
+                width: 20.7vw;
+                margin-bottom: 1.2vh;
+                border: .2vw solid var(--lghtBrdr);
+                border-radius: 1vh 1vh 0vh 0vh; }
+                .profVscrollPane_demoImage {
+                    height: 34vh;
+                    border-radius: 1.2vh 1.2vh 1.2vh 1.2vh;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center; }
+            .VscrollPane_19vWx8vH {  /* ONLY 4 TEST */ 
+                padding: .2vh;
+                background-color: var(--usrPanesBkGrnd);
+                height: 8vh;
+                width: 18.6vw;
+                margin-bottom: 1.2vh;
+                border: .2vw solid var(--lghtBrdr);
+                border-radius: 2vh 1vh; }
+
+        .Vscroll_usrProfNavSpcr {
+            height: .0vh;
+            width: 21.1vw;
+            background-color: var(--lghtBrdr);
+            /* border-bottom: .4vh solid var(--darkBrdr);  */
+        }
+        .userProfileNav {
+            padding: .5vh .3vw;
+            display: flex;
+            height: 10vh;
+            width: 19.95vw;
+            background-color: var(--accent3);
+            border-color: var(--lghtBrdr);
+            border-width: .6vh .3vw;
+            border-style: solid;
+            border-radius: 0vh 0vh 1.1vh 1.1vh; }
+            .usrProfNav_clmn1 {
+                height: 10vh;
+                width: 4.5vw; }
+               .usrProfNav_picPane {
+                    height: 9.6vh;
+                    width: 4vw;
+                    padding: .2vh .1vw;
+                    border-radius: 1.4vh 0vh 0vh 1.4vh;
+                    background-color: var(--usrPanesBkGrnd); }
+                    .usrProfNav_pic {
+                        height: 9.6vh;
+                        border-radius: 1.2vh 1.2vh 1.2vh 1.2vh;
+                        /* background-image: url('../images/userProfile/ResumePic.jpg'); */
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center; }
+            .usrProfNav_clmn2 {
+                background-color: transparent;
+                border-top: .8vh solid var(--usrPanesBkGrnd);
+                border-bottom: .8vh solid var(--usrPanesBkGrnd);
+                height: 8.4vh;
+                width: .3vw; }
+            .usrProfNav_clmn3 {
+                position: relative;
+                top: -2.2vh;
+                height: 10vh;
+                width: 15.5vw; }
+                .usrProfNav_nameArea {
+                    height: 3vh;
+                    width: 15.5vw;
+                    border-radius: 0vh 1.4vh 0vh 0vh;
+                    background-color: var(--usrPanesBkGrnd); }
+                .usrProfNav_lnksRow {
+                    display: flex;
+                    height: 7vh;
+                    width: 15.5vw;
+                    border-radius: 0vh 0vh 1.4vh 0vh;
+                    background-color: var(--usrPanesBkGrnd); }
+/*    FOOTER SECTION    -->    KNOWLEDGE WEB NAVIGATION    */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-(3of3 VERTICAL SECTIONS)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(3of3 VERTICAL SECTIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(3of3 VERTICAL SECTIONS)~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.footerPane {
+    position: relative;
+    margin: 1.4vh .8vw;
+    display: flex;
+    height: 22.6vh;
+    border-style: solid;
+    border-color: var(--darkBrdr);
+    border-width: .4vh .2vw;
+    border-radius: 1.4vh;
+    overflow-x: hidden;
+    overflow-y: hidden; }
+    .HscrollBGpane_navMin {
+        /* background-image: url("images/BGtextures/SP_BlankHeaderFade1474vWx210vH.png"); */
+        background: linear-gradient(0.25turn, #10303e, #4b8b7b, #10303e);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 76.8vw;
+        height: 22.6vh;
+        border-radius: .4vh 0px 0px .4vh; }
+        div.laqHscroll {
+            padding: 1.2vh .8vw .8vh .8vw;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            border-bottom: .4vh solid var(--darkBrdr);
+            border-right: .2vw solid var(--darkBrdr);
+            scrollbar-width: auto; }
+            .Hscroll_phantom {
+                justify-content: space-around;
+                display: flex;
+                height: 17.9vh;/* MAIN HEIGHT CONTROL RELEVANT TO BOTTOM SCROLLBAR BORDER WIDTH */
+                width: 1800px;
+                overflow-x: hidden;
+                overflow-y: hidden; }
+                .Hscroll_kwtFeatPane {
+                    display: flex;
+                    padding: .3vh .2vw;
+                    background-color: transparent;
+                    border: .15vw solid var(--lghtBrdr);
+                    border-radius: 2vh 1vh 2vh 1vh;
+                    width: 530px;
+                    height: 16.2vh; }
+                    /* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+                    /* @@ GOTO-SECTION   --->   Hscroll K-W-T-query Result Pane-Set Variants  ---------->>  GOTO LINE {[~617]}   */
+                    /* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+                .Hscroll_Wspcr {
+                    background-color: var(--darkBrdr);
+                    height: 16.4vh;
+                    width: .2vw;
+                    border: .2vw solid var(--lghtBrdr);
+                    border-radius: 1.4vh .6vh 1.4vh .6vh; }
+/* FOOTER NAV HAS 3 KEY STATES...
+    AN OPEN MODE... with filter features for relevant material in the horizontal slide bar...
+    A CLOSED MODE... with that pane collapsed and docked along the right side...
+    AND AN EXPANDED MODE... which overlays a div.. arising from the bottom... and opening a more elaborate, related content navigation pane... */
+    .navPN_stdSt8 {
+        display: flex;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: rgb(16,48,62);
+        width: 21.4vw;
+        height: 100%;
+        background-size: cover;
+        border-radius: 0px 1.4vh 1.4vh 0px; }
+        .navPN_stdSt8left {
+            width: 10.4vw;
+            height: 4.5vh; }
+            .stdSt8btmLeft {
+                width: 10.4vw;
+                height: 18.1vh; }
+        .navPN_stdSt8right {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 14.4vw;
+            height: 22.6vh; }
+
+        .cornerBttnPane {
+            position: relative;
+            z-index: 650;
+            display: block;
+            background-image: url("../images/DamascusTexture.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(-14deg);
+            padding: .8vh .2vw;
+            width: 6vw;
+            height: 4vh;
+            border-radius: 50em;
+            border: .3vw double var(--darkBrdr); }
+            .cornerBttnPane:hover > .slideArrowCircleFrame {
+                background-color: transparent;}
+                .cornerBttnPane:hover > .slideArrowCircleFrame > .arrow {
+                    border-left: 1.2vw solid var(--hoverClr);
+                    animation: zoom-in-zoom-out .6s ease infinite; }
+                    @keyframes zoom-in-zoom-out {
+                        0% {
+                            transform: scale(1, 1); }
+                        50% {
+                            transform: scale(1.4, 1.4); }
+                        100% {
+                            transform: scale(1, 1); } }
+            .slideArrowCircleFrame {
+                position: relative;
+                padding: .7vh 0 .7vh .4vw;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                width: 1.6vw;
+                background-color: var(--ScrlBttnBkGrnd);
+                border-radius: 50em; }
+                .arrow {
+                    position: relative;
+                    border-top: 1vh solid transparent;
+                    border-bottom: 1vh solid transparent;
+                    border-left: 1.2vw solid var(--bttnTriangleClr); }
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-(END MAIN STRUCTURE)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(END MAIN STRUCTURE)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(END MAIN STRUCTURE)~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-(BEGIN GOTO SECTION)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~(BEGIN GOTO SECTION)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(BEGIN GOTO SECTION)~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+/* @@ GOTO-SECTION   --->   FEATURE CONTENT POSTS & PROFILE DIVS   ---------->>   FROM LINE {[~188]}   */
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+/*    GOTO-SECTION   --->   FEATURE PAGE CONTENT STRUCTURES (SAMPLES TO BE QUERY GENERATED IN FINAL VERSION); 
+                            COLLAPSIBLE UX PANEL STATE VERSIONS TO BE ADDED LATER AS WELL */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.Vscroll_profilePane {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    height: 30.3vh;
+    width: 72vw;
+    margin: 0vh .05vw .1vh .05vw;
+    border-radius: .0vh .0vh 1.8vh 1.8vh; }
+    .profilePane_leftClmn {
+        height: 30.3vh;
+        width: 11.3vw;
+        border-right: .2vw solid var(--darkBrdr); }
+        .profLogoPane {
+            height: 23.4vh;
+            width: 11.3vw;
+            border-bottom: .4vh solid var(--darkBrdr); }
+            .profLogo {
+                background-color: var(--ftPanesBkGrnd);
+                /*background-image: url("images/SPstatues/EvgeniyVuchetich3_Swords2ploughshares.jpg");*/
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 23.2vh;
+                width: 11vw;
+                margin: .2vh .1vw .2vh .2vw; }
+        .profileLinks {
+            background-color: var(--ftPanesBkGrnd);
+            padding-top: .5vh;
+            display: flex;
+            justify-content: space-around;
+            height: 5.5vh;
+            width: 11vw;
+            margin: .2vh .1vw .1vh .2vw;
+            border-radius: 0vh 0vh 0vh 1.4vh; }
+    .profilePane_rightClmn {
+        height: 30.4vh;
+        width: 60.6vw; }
+        .coSol_display { /* CompanyName :: SolutionName */
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--ftPanesBkGrnd);
+            height: 4vh;
+            width: 60.35vw;
+            margin: .2vh .2vw .2vh .1vw; }
+        .featuresANDintroPane {
+            display: flex;
+            height: 25.6vh;
+            width: 60.7vw;
+            border-top: .4vh solid var(--darkBrdr); }
+            .intrnl_leftCol {
+                position: relative;
+                height: 25.7vh;
+                width: 14.2vw; 
+                border-right: .2vw solid var(--darkBrdr); }
+                .featrdContentBRDR {
+                    position: relative;
+                    height: 18.9vh;
+                    width: 14.2vw;
+                    /* border-bottom: .4vh solid var(--darkBrdr); */
+                    } 
+                    .featrdContentSECT {
+                        position: absolute;
+                        background-color: var(--ftPanesBkGrnd);
+                        height: 25.2vh;
+                        width: 14vw;
+                        margin: .2vh .1vw .2vh .1vw; }
+                        .featrdContentHDR {
+                            background-color: var(--ftPanesBkGrnd);
+                            height: 1vh;
+                            width: 14vw; }
+                        .featrdContentROW {
+                            padding-top: 1.4vh;
+                            display: flex;
+                            justify-content: space-evenly;
+                            background-color: var(--ftPanesBkGrnd);
+                            height: 5.6vh;
+                            width: 14vw; }
+                            .featrdContentPANE {
+                                background-color: transparent;
+                                overflow-x: hidden;
+                                overflow-y: hidden;
+                                border-radius: .8vh;
+                                height: 5.6vh;
+                                width: 2.8vw; }
+                .scrollingDrpBoxLnks {
+                    background-color: var(--ftPanesBkGrnd);
+                    height: 6vh;
+                    width: 14vw;
+                    margin: .2vh .1vw .2vh .1vw; }
+            .intrnl_rightCol { /* ONLY FOR TEXT in original pitch version, but this should be configurable to a number of modes based on business presentation needs */
+                background-color: var(--ftPanesBkGrnd);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1.4vh;
+                color: var(--bttnTriangleClr);
+                height: 25.2vh;
+                width: 46vw;
+                border-radius: 0vh 0vh 1.4vh 0vh;
+                margin: .2vh .2vw .2vh .1vw; }
+
+/*  Linked-Content (post/link) Feature Div - Original Design  */ /* Hard-Coded Sample Content for Pitch  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* ::|::::--->  SHARED LEFT/RIGHT MAIN COLUMN STRUCTURES  <---::::|:: */
+.VscrlPn_lnkdCntnt {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    border-radius: 1.8vh 1.8vh 1.8vh 1.8vh;
+    height: 33.5vh;
+    width: 72vw;
+    margin: .0vh .05vw .1vh .05vw;}
+.VscrlPn_lnkdCntnt2 {
+    display: flex;
+    border-width: .4vh .2vw;
+    border-color: var(--darkBrdr);
+    border-style: solid;
+    border-radius: 1.8vh 1.8vh 1.8vh 1.8vh;
+    height: 50vh;
+    width: 72vw;
+    margin-bottom: 1vh; }
+    .lnkdCntnt_leftClmn {
+        position: relative;
+        top: 1.5vh;
+        height: 30.5vh;
+        width: 25.7vw; 
+        border-radius: 1.4vh 0vh 0vh 1.4vh;
+        border-right: .2vw solid var(--darkBrdr); }
+        /* ::|::::--->  VERSION 1  <---::::|:: */
+        .lnkdCntnt_linkFeatr {
+            position: relative;
+            top: -1.5vh;
+            border-radius: 1.4vh 0vh 0vh 0vh;
+            display: flex;
+            height: 23.6vh;
+            width: 25.7vw; 
+            border-bottom: .4vh solid transparent; }
+            .linkFeatr_innrLeft {
+                height:23vh;
+                width: 12.8vw; }
+                .linkFeatr_innrLeftTop {
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 1.4vh 0vh 0vh 0vh;
+                    margin: .2vh 0vw 0vh .2vw;
+                    padding: .2vh 0vw 0vh .1vw;
+                    height: 6.8vh;
+                    width: 12.7vw; }
+                    .innrRghtTop_ttlTxt {
+                        border-radius: 1vh .8vh 0vh 0vh;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        margin: .4vh .2vw 0vh .2vw;
+                        height: 6.4vh;
+                        width: 12.2vw; }
+                .linkFeatr_picPane {
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 0vh 0vh 0vh 1.4vh;
+                    margin: 0vh .2vw 0vh .2vw;
+                    padding: 0vh .3vw 0vh .3vw;
+                    height: 16.4vh;
+                    width: 12.2vw; }
+                    .linkFeatr_pic {
+                        border-radius: 0vh 0vh .8vh 1vh;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        height: 15.9vh;
+                        width: 12.2vw; }
+            .linkFeatr_spcrClmn { 
+                margin: .2vh 0vw 0vh 0vw;
+                height: 23.6vh;
+                width: .4vw; }
+                .spcrClmn_Top { 
+                    border-top: .7vh solid var(--ftPanesBkGrnd);
+                    border-bottom: .4vh solid var(--ftPanesBkGrnd);
+                    height: 6.1vh;
+                    width: .4vw; }
+                .spcrClmn_Mid { 
+                    border-top: .4vh solid var(--ftPanesBkGrnd);
+                    border-bottom: .4vh solid var(--ftPanesBkGrnd);
+                    height: 7.4vh;
+                    width: .4vw; }
+                .spcrClmn_Btm { 
+                    border-top: .4vh solid var(--ftPanesBkGrnd);
+                    border-bottom: .7vh solid var(--ftPanesBkGrnd);
+                    height: 7.4vh;
+                    width: .4vw; }
+            .linkFeatr_innrRght { 
+                height: 23.6vh;
+                width: 12.4vw; }
+                .innrRghtTop_TtlTxt { 
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 0vh 1.4vh 0vh 0vh;
+                    margin: .2vh 0vw 0vh 0vw;
+                    height: 7.1vh;
+                    width: 12.4vw; }
+                .innrRghtBtm_SmmryTxt {
+                    background-color: var(--ftPanesBkGrnd);
+                    border-radius: 0vh 0vh .8vh 0vh;
+                    margin: 0vh 0vw 0vh 0vw;
+                    height: 16.3vh;
+                    width: 12.4vw; }
+
+            .linkFeatr_KwtQuery {
+                display: flex;
+                position: relative;
+                top: -1.5vh;
+                border-width: .6vh .3vw;
+                border-style: solid;
+                border-color: var(--ftPanesBkGrnd);
+                border-radius: 1.4vh .8vh 1.4vh 1.4vh;
+                background-color: transparent;
+                height: 8.1vh;
+                width: 24.85vw; 
+                margin: .2vh .1vw .2vh .2vw; }
+                .lnkFtKWTqClmn1_NtwrkLogo { /* Learning Network Logo */
+                    border-radius: 1vh .8vh .8vh 1vh;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center; 
+                    background-color: var(--ftPanesBkGrnd);
+                    width: 4vw;
+                    height: 8.1vh; }
+
+                .lnkFtKWTqClmn2 {
+                    width: 19vw;
+                    height: 8.1vh; }
+                    .lnkFtKWTqClmn2top_NtwrkNm { /* Text Area For Learning Network Specifics */
+                        background-color: var(--ftPanesBkGrnd);
+                        width: 20.85vw;
+                        height: 2.2vh; }
+                    .lnkFtKWTqClmn2btm_CntntDesc { /* Text Area For Learning Network Specifics */
+                        display: flex;
+                        width: 20.85vw; 
+                        height: 5.9vh; }
+                        .lnkFtKWTqClmn2btm_TxtRow {
+                            margin-right: .25vw;
+                            background-color: var(--ftPanesBkGrnd);
+                            width: 11.25vw;
+                            height: 5.9vh; }
+                        .lnkFtKWTqClmn2btm_SbjIcnGrp { /* Learning Network Name & Subject-Focus Icons */
+                            display:flex;
+                            background-color: var(--ftPanesBkGrnd);
+                            width: 9.4vw;
+                            height: 5.9vh; }
+                            .lnkFtKWTqClmn2btm_IcnPane {
+                                border-radius: 1.8vh;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                width: 2.8vw;
+                                height: 5.6vh; }
+    /* ::|::::--->  SHARED LEFT/RIGHT MAIN COLUMN STRUCTURES  <---::::|:: */
+    .lnkdCntnt_rghtClmn { /* Only for Hard-Coded Sample DIVs */
+        display: flex;
+        border-radius: 1.4vh 1.4vh 1.4vh 1.4vh;
+        background-color: var(--ftPanesBkGrnd);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vh;
+        color: var(--bttnTriangleClr);
+        height: 33.1vh;
+        width: 45.95vw;
+        margin: .2vh .1vw .2vh .1vw; }
+    .lnkdCntnt_cmmntStruct {
+        border-radius: 1.4vh 1.4vh 1.4vh 1.4vh;
+        background-color: var(--ftPanesBkGrnd);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vh;
+        color: var(--bttnTriangleClr);
+        height: 48.8vh;
+        width: 45.55vw;
+        padding: .4vh .2vw;
+        margin: .2vh .1vw .2vh .1vw; }
+        .cmmntStruct_postSet {
+            display: flex;
+            width: 45.95vw;
+            height: 20vh; }
+            .cmmntStruct_clmn1 {
+                width: 5vw;
+                height: 15vh; }
+                .cmmntrProf {
+                    position: relative;
+                    height: 6vh;
+                    border-radius: 1.2vh 1.2vh 1.2vh 1.2vh;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center; }
+                .branchedLink {
+                    position: relative;
+                    top: -4.8vh;
+                    height: 3vh;
+                    width: 4.8vw;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 1.2vh 1.2vh 1.2vh 1.2vh;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center; }
+            .cmmntStruct_clmn2 {
+                width: 38vw;
+                height: 15vh; }
+        .cmmntGrpSpacer {
+            display: flex;
+            margin-top: 1.8vh;
+            margin-bottom: .4vh;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: .3vh solid var(--lghtBrdr);
+            border-bottom: .3vh solid var(--lghtBrdr);
+            border-radius: 20em 40em 20em 40em;
+            background-color: var(--darkBrdr);
+            width: 44vw;
+            height: .3vh; }
+            .cmmntBttns {
+                position: relative;
+                top: -2.5vh;
+                width: 6vw;
+                height: 2vh;
+                padding-right: 1vw;
+                text-align: center;
+                color: var(--bttnTextClr);
+                background-color: var(--bttnBkGrnd);
+                background-color: var(--bttnBkGrnd);
+                border-width: .3vh .15vw;
+                border-color: var(--darkBrdr);
+                border-style: solid;
+                border-radius: .6vh;
+                font-family: Helvetica;
+                font-weight: bold;
+                font-size: 2vh;
+                color: rgb(16,48,62);
+                padding: .2vh .4vw .1vh .4vw; }
+
+/* Hard-Coded Sample Content for Pitch  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* ::|::::--->    <---::::|:: */
+/* Hard-Coded Sample Content for Pitch  */
+/*.VscrollPane_pstLnkSNGL {}
+    .pstLnkSNGL_leftClmn {}
+        .pstLnkSNGL_linkFeatr {}
+            .pstLnkSNGL_logoPane {}
+            .pstLnkSNGL_textBox {}
+    .pstLnkSNGL_rghtClmn {}*/
+
+/*    */ /* Hard-Coded Sample Content for Pitch  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* ::|::::--->    <---::::|:: */
+.VscrollPane_fundraising {
+    border: .2vh solid yellow;
+    margin-bottom: 1vh; }
+
+
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* @@ GOTO-SECTION    --->   UserProfNav Docked Mock-up   ---------->>   FROM LINE {[~]}  */
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+
+
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* @@ GOTO-SECTION    --->   Hscroll K-W-T-query (Knowledge Web/Tree) Search Result Pane-SET Variants   ---------->>   FROM LINE {[~308]}  */
+/* !!~!!-!-!!~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/*  Variant(1) ---> ;   */ /*  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.Hscroll_kwtFPlftClmn {
+    background-color: transparent;
+    width: 9.2vw;
+    height: 16.4vh; }
+    .Hscroll_kwtTtlTxtPane {
+        background-color: var(--hScrlPanesBkGrnd);
+        border-radius: 1.4vh 0vh 0vh 0vh;
+        border-bottom: var(--hScrlPanesBkGrnd) solid .2vh;
+        padding-top: .2vh;
+        width: 9vw;
+        height: 4.6vh; }
+        .kwtTtlTxtPane_txtLogo {
+            position: relative;
+            left: .2vh;
+            border-radius: 1.4vh .8vh 0vh 0vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            width: 8.8vw;
+            height: 4.7vh; }
+    .Hscroll_kwtPicPane {
+        background-color: var(--hScrlPanesBkGrnd);
+        padding: .0vh .1vw .2vh .1vw;
+        width: 8.8vw;
+        height: 11.2vh;
+        border-radius: 0vh 0vh 1.4vh .8vh; }
+        .Hscroll_kwtPic {
+            width: 8.8vw;
+            height: 11.2vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            border-radius: 0vh 0vh 1.4vh .8vh; }
+.Hscroll_kwtFPrhtClmn {
+    margin: 0vh;
+    width: 19vw;
+    height: 16.4vh; }
+    .kwtFPrhtClmn_topRw {
+        display: flex;
+        width: 18.6vw;
+        height: 9.1vh; }
+        .kwtFPrhtClmn_TpRwSpcr {
+            height: 8vh;
+            width: .2vw;
+            border-top: .6vh solid var(--hScrlPanesBkGrnd);
+            border-bottom: .6vh solid var(--hScrlPanesBkGrnd);
+            background-color: transparent; }
+        .kwtFPrhtClmn_TpRwTxtGrp {
+            height: 9.1vh;
+            width: 18.4vw;
+            background-color: var(--hScrlPanesBkGrnd); 
+            border-radius: 0vh .8vh 1.4vh 0vh; }
+    .kwtFPrhtClmn_btmRw {
+        margin-top: .4vh;
+        margin-left: .2vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        border-radius: 0vh 1.4vh 1.4vh 1.4vh;
+        border: .2vw solid var(--hScrlPanesBkGrnd);
+        background-color: transparent;
+        display: flex;
+        width: 18.1vw;
+        height: 6.1vh; }
+        .btmRwClmn1_NtwrkLogo { /* Learning Network Logo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            width: 2.8vw;
+            height: 6.1vh; }
+        .btmRwClmn2_CntntDesc {
+            width: 15.3vw;
+            height: 6vh; }
+            .btmRwC2top_NtwrkNm { /* Learning Network Name */
+                background-color: var(--hScrlPanesBkGrnd);
+                width: 15.3vw;
+                height: 2vh; }
+            .btmRwClmn2btm {
+                display: flex;
+                width: 15.5vw;
+                height: 4.3vh; }
+                .btmRwC2btmL_TxtRow { /* Text Description / Linked Content Tags */
+                    margin-right: .2vw;
+                    background-color: var(--hScrlPanesBkGrnd);
+                    width: 15.3vw;
+                    height: 4.3vh; }
+                .btmRwC2btmR_subjectIcnGrp { /* Subject-Focus Icons */
+                    justify-content: space-around;
+                    display: flex;
+                    background-color: var(--hScrlPanesBkGrnd);
+                    width: 6.4vw;
+                    height: 4.3vh; }
+                    .btmRwC2btmR_IcnPane {
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 2.1vw;
+                        height: 4.3vh; }
+
+
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+/* @@ GOTO-SECTION  --->  ALTERNATE PANE STYLES = {.userNavPane_Collpased && .userNavPane_FULL}  ---------->>  FROM LINE {[~???]} */
+/* !-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-!-~-! */
+
+
+/*    CORE UX CUSTOMIZATION SECTION    -->    SCROLLBARS; DROPDOWNS;
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-(UX CUSTOMIZATION)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(UX CUSTOMIZATION)~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(UX CUSTOMIZATION)~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/*  ALL SCROLL-BAR AND BUTTON SETTINGS  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+::-webkit-scrollbar {
+    width: 2.4vh;
+    height: 2.4vh;}
+    ::-webkit-scrollbar-track {
+        background: var(--accent2);
+        border-radius: .7vh;}
+    ::-webkit-scrollbar-thumb {
+        background: var(--lghtBrdr);
+        border-radius: .7vh;}
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--hoverClr);}
+/* Buttons */
+::-webkit-scrollbar-button {
+    border-style: solid;
+    height: 2.1vh;
+    width: 2.1vh;}
+    /* Up */
+    ::-webkit-scrollbar-button:vertical:decrement {
+        border-width: 0 1.1vh 2.2vh 1.1vh;
+        border-color: var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--bttnTriangleClr) var(--ScrlBttnBkGrnd); }
+        ::-webkit-scrollbar-button:vertical:decrement:hover {
+            border-color: transparent transparent var(--hoverClr);
+            animation: zoom-in-zoom-out .6s ease infinite; }
+            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }
+    /* Down */
+::-webkit-scrollbar-button:vertical:increment {
+    border-width: 2.2vh 1.1vh 0 1.1vh;
+    border-color: var(--bttnTriangleClr) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd); }
+        ::-webkit-scrollbar-button:vertical:increment:hover {
+            border-color: var(--hoverClr) transparent transparent transparent;
+            animation: zoom-in-zoom-out .6s ease infinite; }
+            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }
+    /* Left */
+::-webkit-scrollbar-button:horizontal:decrement {
+    border-width: 1.1vh 2.2vh 1.1vh 0;
+    scroll-margin: 100px;
+    border-color: var(--ScrlBttnBkGrnd) var(--bttnTriangleClr) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd); }
+        ::-webkit-scrollbar-button:horizontal:decrement:hover {
+            border-color: transparent var(--hoverClr) transparent transparent;
+            animation: zoom-in-zoom-out .6s ease infinite; }
+            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }
+    /* Right */
+::-webkit-scrollbar-button:horizontal:increment {
+    border-width: 1.1vh 0 1.1vh 2.2vh;
+    border-color: var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--ScrlBttnBkGrnd) var(--bttnTriangleClr); }
+        ::-webkit-scrollbar-button:horizontal:increment:hover {
+            border-color: transparent transparent transparent var(--hoverClr);
+            animation: zoom-in-zoom-out .6s ease infinite; }
+            @keyframes zoom-in-zoom-out {
+                0% { transform: scale(1, 1); }
+                50% { transform: scale(.7, .7); }
+                100% { transform: scale(1, 1); }    }
+
+/*  ALL DROP-DOWN MENU AND BUTTON SETTINGS  */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+.DrpdwnDiv {
+  background-color: var(--bttnBkGrnd);
+  pointer-events: inherit;
+  text-align: center;
+  z-index: 699;
+  display: block;
+  border-radius: .6vh;
+  border: .3vh solid var(--darkBrdr); }
+  .kwtDrpdwnLnk {
+    padding: 0 .6vw;
+    border-radius: .4vh;
+    border: none;
+    font-family: Helvetica;
+    color: var(--bttnTextClr);
+    font-size: 2vh;
+    font-weight: bold;
+    cursor: pointer; }
+        /* This code chunk determines color of selected menu */
+        /*.dropdown > .link:focus,*/ /*-->  This version is for non-JS implementations & testing situations  */
+        .DrpdwnDiv.active > .kwtDrpdwnLnk,
+        .kwtDrpdwnLnk:hover {
+            color: var(--hoverClr); }
+        .DrpdwnDiv.active > .link,
+        .link:hover {
+            color: var(--hoverClr); }
+
+.dropdown {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    gap: 0; }
+    .dropDownLink {
+        background: none;
+        border: none;
+        text-decoration: none;
+        color: mintcream;
+        font-family: Helvetica;
+        font-size: 1.8vh;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        border-radius: .4vh;
+    }
+        /* This code chunk determines color of selected menu */
+        /*.dropdown > .link:focus,*/ /*-->  This version is for non-JS implementations & testing situations  */
+        .dropdown.active > .dropDownLink,
+        .dropDownLink:hover {
+            color: var(--hoverClr);
+        }
+
+    /* Set DropDown properties --> Animation Set 1of2 --> This is the active state, when the drop-Down is visible. */
+    .dropdown-menu {
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        top: calc(100% + .1vh);
+        background-color: white;
+        padding: 1.2vh 1vw;
+        border-radius: 1.4vh;
+        box-shadow: 0 1vh 1vw 0 rgba(0,0,0,.1);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8vh);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; }
+        .information-grid {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            gap: 1.8vh; }
+            .dropdown-heading {
+                font-size: 2vh;
+                font-family: Helvetica;
+                gap: .8vh;
+                text-decoration: underline;
+                text-decoration-color: var(--darkBrdr);
+                text-decoration-thickness: .2vh; }
+            .dropdown-links {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.8vh;
+                gap: .1vh; }
+                .link {
+                    background: none;
+                    border: none;
+                    text-decoration: none;
+                    color: #777;
+                    font-family: inherit;
+                    font-size: inherit;
+                    cursor: pointer;
+                    padding: 0; }
+            /* This code chunk determines color of selected menu */
+            /*.dropdown > .link:focus,*/ /*-->  This version is for non-JS implementations & testing situations  */
+            .dropdown.active > .link,
+            .link:hover {
+                color: var(--hoverClr); }
+
+/* This drives the animation from it's prior state... which should be set to invisible, with no pointer-events. */
+/*.dropdown > .link:focus + .dropdown-menu {*/ /*-->  This version is for non-JS implementations & testing situations */
+.dropdown.active > .dropDownLink + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; }
+    .dropdown.active > .link + .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; }
+.DrpdwnDiv.active > .kwtDrpdwnLnk + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; }
+    .DrpdwnDiv.active > .link + .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; }
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-(CORE TEXT DEFINITIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~(CORE TEXT DEFINITIONS)-~-~-~-~-~-~-~-~-~-~-~-~-~-~-(CORE TEXT DEFINITIONS)~-~-~-~-~-~-~-~-~- */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- */
+h1 { /* (LEFT) Company Name; Concept | (RIGHT) City, St */
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bttnTriangleClr) }
+
+#font1 { /* Feature Business/Concept Page; comments & post text */
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: var(--bttnTriangleClr) }
+
+h2 { /* User Profile Name Text */
+    position: relative;
+    left: .3vw;
+    top: .3vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--accent3); }
+
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+/*   UNUSED DEV CODE [ALTERNATE STYLES/SAMPLES   */
+/* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
